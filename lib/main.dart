@@ -7,6 +7,7 @@ import 'package:overlay_support/overlay_support.dart';
 Future<void> main() async {
   F.appFlavor = Flavor.dev;
   WidgetsFlutterBinding.ensureInitialized();
+
   await setupGetIt();
   runApp(const MyApp());
 }

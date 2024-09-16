@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/item/slider_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<SliderItem> sliders = [];
+  List<ProductListResponse> products = [];
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -37,6 +40,9 @@ class _HomeScreenState extends State<HomeScreen> {
           if (state is HomeSliderData) {
             sliders.addAll(state.sliderItems);
           }
+          if (state is HomeProductData) {
+            products.addAll(state.productListResponse);
+          }
         },
         builder: (context, state) {
           return Scaffold(
@@ -44,11 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
             body: SingleChildScrollView(
               child: Column(
                 children: [
-                  HomeTitleSlider(
-                    sliders: sliders,
-                  ),
+                  if (sliders.isNotEmpty)
+                    HomeTitleSlider(
+                      sliders: sliders,
+                    ),
                   const ActionTitle(),
-                  const GridProductLists(),
+                  if (products.isNotEmpty) GridProductLists(products: products),
                   const ActionNowComponent(
                     hasImage: false,
                   ),

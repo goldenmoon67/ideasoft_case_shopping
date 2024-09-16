@@ -1,3 +1,4 @@
+import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/slider.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -10,4 +11,6 @@ abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
   @GET("sliders")
   Future<List<Slider>> getSliders();
+  @GET("products")
+  Future<List<ProductListResponse>> getProducts();
 }

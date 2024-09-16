@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:ideasoft_case_project_shop/src/configs/flavors.dart';
+import 'package:ideasoft_case_project_shop/src/data/repositories/product/product_repository_impl.dart';
 import 'package:ideasoft_case_project_shop/src/data/repositories/slider/slider_repository_impl.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/api/rest_api_service.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/client/rest_client.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/secure/secure_storage_service.dart';
+import 'package:ideasoft_case_project_shop/src/domain/repositories/product/product_repository.dart';
 import 'package:ideasoft_case_project_shop/src/domain/repositories/slider/slider_repository.dart';
 import 'package:ideasoft_case_project_shop/src/logs/log_console.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
@@ -46,4 +48,5 @@ Future setupGetIt({bool testing = false}) async {
   getIt.registerSingleton(
       RestClient(getIt<Dio>(instanceName: 'RestApiService')));
   getIt.registerLazySingleton<SliderRepository>(() => SliderRepositoryImpl());
+  getIt.registerLazySingleton<ProductRepository>(() => ProductRepositoryImpl());
 }

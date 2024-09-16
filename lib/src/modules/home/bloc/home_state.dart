@@ -12,3 +12,9 @@ final class HomeSliderData extends HomeState {
 
   HomeSliderData({required this.sliderItems});
 }
+
+final class HomeProductData extends HomeState {
+  final List<ProductListResponse> productListResponse;
+
+  HomeProductData({required this.productListResponse});
+}
