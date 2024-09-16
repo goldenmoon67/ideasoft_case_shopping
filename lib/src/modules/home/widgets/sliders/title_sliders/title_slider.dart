@@ -19,7 +19,7 @@ class HomeTitleSlider extends StatelessWidget {
         return Builder(
           builder: (BuildContext context) {
             return HomeTitleSliderItem(
-              imageUrl: "https:${item.imageUrl}", //FIXME:: bug on backend api
+              imageUrl: "https:${item.imageUrl}",
               title: item.description,
               buttonText: "Button",
               onPressed: () {
