@@ -11,7 +11,7 @@ class F {
       case Flavor.dev:
         //return 'http://localhost:5200/'; //ios simulator
         //return 'http://10.0.2.2:5200/';//android emulator
-        return "http://10.0.2.2:8080/api/";
+        return "https://testcase.myideasoft.com/admin-api/";
       case Flavor.prod:
       default:
         return "http://10.0.2.2:8080/api/";

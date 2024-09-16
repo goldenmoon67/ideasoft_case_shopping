@@ -11,8 +11,7 @@ class AuthInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    const accessToken =
-        ""; // _oauth.storage.accessToken;        //TODO:: set acces token
+    const accessToken = "AX5FTZ7UBAABUDT6XYYPW7LX";
 
     options.headers["Authorization"] = "Bearer $accessToken";
 
@@ -38,11 +37,7 @@ class AuthInterceptor extends Interceptor {
     if (isTokenExpired) {
       RequestOptions requestOptions = err.requestOptions;
 
-      /*   FirebaseCrashlytics.instance
-          .log("statusCode == 401 path: ${requestOptions.path}");
- */
-      const accessToken =
-          ""; //_oauth.storage.accessToken;         //TODO:: set acces token
+      const accessToken = "AX5FTZ7UBAABUDT6XYYPW7LX";
 
       const bearerToken = "Bearer $accessToken";
       // If the token has been updated, repeat directly.
@@ -65,18 +60,9 @@ class AuthInterceptor extends Interceptor {
       }
 
       try {
-        //refresh access token
-        //const oauthToken = ""; //await _oauth.refreshAccessToken();
-        /*    requestOptions.headers["Authorization"] =
-            "Bearer ${oauthToken.accessToken}"; */
-        //TODO:: set acces token
-        //repeat current request call
         final response = await _dio.fetch(requestOptions);
         handler.resolve(response);
       } catch (err) {
-        /*   FirebaseCrashlytics.instance
-            .log("Refresh AccessToken: catchError ${err.toString()}"); */
-
         if (err is DioException) {
           handler.reject(err);
         } else {

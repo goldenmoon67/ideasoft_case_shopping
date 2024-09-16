@@ -4,3 +4,11 @@ part of 'home_bloc.dart';
 sealed class HomeState {}
 
 final class HomeInitial extends HomeState {}
+
+final class HomeLoading extends HomeState {}
+
+final class HomeSliderData extends HomeState {
+  final List<SliderItem> sliderItems;
+
+  HomeSliderData({required this.sliderItems});
+}

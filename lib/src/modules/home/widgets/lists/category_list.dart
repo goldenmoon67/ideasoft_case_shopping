@@ -66,7 +66,6 @@ class _CategoryListState extends State<CategoryList> {
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
               setState(() {
-                debugPrint(_currentIndex.toString());
                 _currentIndex = (_currentIndex > 0)
                     ? _currentIndex - 1
                     : _categories.length - 1;
@@ -81,8 +80,6 @@ class _CategoryListState extends State<CategoryList> {
             icon: const Icon(Icons.arrow_forward_ios),
             onPressed: () {
               setState(() {
-                debugPrint(_currentIndex.toString());
-
                 _currentIndex = (_currentIndex < _categories.length - 1)
                     ? _currentIndex + 1
                     : 0;

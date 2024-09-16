@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/slider/item/slider_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,31 +21,42 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<SliderItem> sliders = [];
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeBloc(),
+      create: (context) => HomeBloc()..add(StartHomeEvent()),
       child: BlocConsumer<HomeBloc, HomeState>(
         listener: (context, state) {
-          //TODO:: add listeners for states
+          if (state is HomeLoading) {
+            EasyLoading.show();
+          } else {
+            EasyLoading.dismiss(animation: false);
+          }
+
+          if (state is HomeSliderData) {
+            sliders.addAll(state.sliderItems);
+          }
         },
         builder: (context, state) {
           return Scaffold(
             appBar: homeScreennAppbar(context),
-            body: const SingleChildScrollView(
+            body: SingleChildScrollView(
               child: Column(
                 children: [
-                  HomeTitleSlider(),
-                  ActionTitle(),
-                  GridProductLists(),
-                  ActionNowComponent(
+                  HomeTitleSlider(
+                    sliders: sliders,
+                  ),
+                  const ActionTitle(),
+                  const GridProductLists(),
+                  const ActionNowComponent(
                     hasImage: false,
                   ),
-                  CategoryList(),
-                  ActionNowComponent(
+                  const CategoryList(),
+                  const ActionNowComponent(
                     hasImage: true,
                   ),
-                  Newsteller()
+                  const Newsteller()
                 ],
               ),
             ),
