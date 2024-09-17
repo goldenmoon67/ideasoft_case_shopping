@@ -11,4 +11,10 @@ class ProductRepositoryImpl extends ProductRepository {
     var list = await client.getProducts();
     return list;
   }
+
+  @override
+  Future<List<ProductListResponse>> searchProducts(String query) async {
+    var list = await client.getProducts();
+    return list;
+  }
 }

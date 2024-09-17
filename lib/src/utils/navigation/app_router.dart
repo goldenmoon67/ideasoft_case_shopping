@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/screens/home_screen.dart';
+import 'package:ideasoft_case_project_shop/src/modules/search/screens/search_screen.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/guards/auth_guard.dart';
 part 'app_router.gr.dart';
 
@@ -14,8 +15,9 @@ class AppRouter extends _$AppRouter {
       page: HomeRoute.page,
       initial: true,
     ),
-
-    //other screens
+    AutoRoute(
+      page: SearchRoute.page,
+    ),
   ];
 }
 

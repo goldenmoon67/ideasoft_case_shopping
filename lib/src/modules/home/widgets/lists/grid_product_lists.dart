@@ -18,7 +18,9 @@ class GridProductLists extends StatelessWidget {
         itemBuilder: (context, index) {
           return ProductItem(onTap: () {
             // AutoRouter.of().push
-          }, products[index].fullName, products[index].price1.toString(),
+          },
+              products[index].fullName,
+              products[index].price1.toString() + products[index].currency.abbr,
               "https:${products[index].images.first.thumbUrl}.${products[index].images.first.extension}");
         });
   }
