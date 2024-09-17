@@ -7,7 +7,7 @@ part 'product_detail.g.dart';
 class ProductDetail with _$ProductDetail {
   const factory ProductDetail({
     required int id,
-    required String details,
+    required String? details,
     required String extraDetails,
   }) = _ProductDetail;
 

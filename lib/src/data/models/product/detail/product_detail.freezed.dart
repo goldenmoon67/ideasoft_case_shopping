@@ -21,7 +21,7 @@ ProductDetail _$ProductDetailFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ProductDetail {
   int get id => throw _privateConstructorUsedError;
-  String get details => throw _privateConstructorUsedError;
+  String? get details => throw _privateConstructorUsedError;
   String get extraDetails => throw _privateConstructorUsedError;
 
   /// Serializes this ProductDetail to a JSON map.
@@ -40,7 +40,7 @@ abstract class $ProductDetailCopyWith<$Res> {
           ProductDetail value, $Res Function(ProductDetail) then) =
       _$ProductDetailCopyWithImpl<$Res, ProductDetail>;
   @useResult
-  $Res call({int id, String details, String extraDetails});
+  $Res call({int id, String? details, String extraDetails});
 }
 
 /// @nodoc
@@ -59,7 +59,7 @@ class _$ProductDetailCopyWithImpl<$Res, $Val extends ProductDetail>
   @override
   $Res call({
     Object? id = null,
-    Object? details = null,
+    Object? details = freezed,
     Object? extraDetails = null,
   }) {
     return _then(_value.copyWith(
@@ -67,10 +67,10 @@ class _$ProductDetailCopyWithImpl<$Res, $Val extends ProductDetail>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      details: null == details
+      details: freezed == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       extraDetails: null == extraDetails
           ? _value.extraDetails
           : extraDetails // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$ProductDetailImplCopyWith<$Res>
       __$$ProductDetailImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String details, String extraDetails});
+  $Res call({int id, String? details, String extraDetails});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$$ProductDetailImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? details = null,
+    Object? details = freezed,
     Object? extraDetails = null,
   }) {
     return _then(_$ProductDetailImpl(
@@ -112,10 +112,10 @@ class __$$ProductDetailImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      details: null == details
+      details: freezed == details
           ? _value.details
           : details // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       extraDetails: null == extraDetails
           ? _value.extraDetails
           : extraDetails // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ class _$ProductDetailImpl implements _ProductDetail {
   @override
   final int id;
   @override
-  final String details;
+  final String? details;
   @override
   final String extraDetails;
 
@@ -179,7 +179,7 @@ class _$ProductDetailImpl implements _ProductDetail {
 abstract class _ProductDetail implements ProductDetail {
   const factory _ProductDetail(
       {required final int id,
-      required final String details,
+      required final String? details,
       required final String extraDetails}) = _$ProductDetailImpl;
 
   factory _ProductDetail.fromJson(Map<String, dynamic> json) =
@@ -188,7 +188,7 @@ abstract class _ProductDetail implements ProductDetail {
   @override
   int get id;
   @override
-  String get details;
+  String? get details;
   @override
   String get extraDetails;
 

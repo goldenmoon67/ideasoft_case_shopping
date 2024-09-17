@@ -21,10 +21,21 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const HomeScreen(),
       );
     },
+    ProductDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: ProductDetailScreen(
+          key: args.key,
+          productId: args.productId,
+        )),
+      );
+    },
     SearchRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SearchScreen(),
+        child: WrappedRoute(child: const SearchScreen()),
       );
     },
   };
@@ -42,6 +53,44 @@ class HomeRoute extends PageRouteInfo<void> {
   static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProductDetailScreen]
+class ProductDetailRoute extends PageRouteInfo<ProductDetailRouteArgs> {
+  ProductDetailRoute({
+    Key? key,
+    required int productId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ProductDetailRoute.name,
+          args: ProductDetailRouteArgs(
+            key: key,
+            productId: productId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ProductDetailRoute';
+
+  static const PageInfo<ProductDetailRouteArgs> page =
+      PageInfo<ProductDetailRouteArgs>(name);
+}
+
+class ProductDetailRouteArgs {
+  const ProductDetailRouteArgs({
+    this.key,
+    required this.productId,
+  });
+
+  final Key? key;
+
+  final int productId;
+
+  @override
+  String toString() {
+    return 'ProductDetailRouteArgs{key: $key, productId: $productId}';
+  }
 }
 
 /// generated route for

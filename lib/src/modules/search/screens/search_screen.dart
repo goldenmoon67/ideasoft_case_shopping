@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/bloc/search_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/widgets/search_result_item.dart';
+import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
 class SearchScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -142,6 +143,12 @@ class _SearchScreenState extends State<SearchScreen> {
                                     : "Tax Not Included";
 
                                 return SearchResultItem(
+                                  onTap: () {
+                                    AutoRouter.of(context).push(
+                                      ProductDetailRoute(
+                                          productId: products[index].id),
+                                    );
+                                  },
                                   productImage: productImage,
                                   fullName: product.fullName,
                                   price: price,

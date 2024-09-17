@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/product/product_item.dart';
+import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 class GridProductLists extends StatelessWidget {
   final List<ProductListResponse> products;
@@ -17,7 +19,8 @@ class GridProductLists extends StatelessWidget {
             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) {
           return ProductItem(onTap: () {
-            // AutoRouter.of().push
+            AutoRouter.of(context)
+                .push(ProductDetailRoute(productId: products[index].id));
           },
               products[index].fullName,
               products[index].price1.toString() + products[index].currency.abbr,

@@ -9,7 +9,7 @@ part of 'product_detail.dart';
 _$ProductDetailImpl _$$ProductDetailImplFromJson(Map<String, dynamic> json) =>
     _$ProductDetailImpl(
       id: (json['id'] as num).toInt(),
-      details: json['details'] as String,
+      details: json['details'] as String?,
       extraDetails: json['extraDetails'] as String,
     );
 

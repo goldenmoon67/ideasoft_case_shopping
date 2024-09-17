@@ -16,4 +16,7 @@ abstract class RestClient {
 
   @GET("products?q[{query}]")
   Future<List<ProductListResponse>> searchProducts(@Path() String query);
+
+  @GET("products/{id}")
+  Future<ProductListResponse> getProductDetail(@Path() int id);
 }
