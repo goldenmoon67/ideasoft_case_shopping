@@ -5,6 +5,7 @@ import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:ideasoft_case_project_shop/src/configs/flavors.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/interceptors/auth_interceptor.dart';
+import 'package:ideasoft_case_project_shop/src/data/services/interceptors/default_header_interceptor.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/interceptors/error_interceptor.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/transformers/flutter_transformer.dart';
 import 'package:ideasoft_case_project_shop/src/utils/di/getit_register.dart';
@@ -36,6 +37,7 @@ class RestApiService {
         'Authorization': 'AX5FTZ7UBAABUDT6XYYPW7LX',
       },
     ));
+    dio.interceptors.add(DefaultHeaderInterceptor());
 
     dio.interceptors.add(AuthInterceptor(dio, onInvalid: (error) {
       // logout from app

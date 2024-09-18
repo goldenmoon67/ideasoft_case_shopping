@@ -15,10 +15,28 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AddCategoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const AddCategoryScreen()),
+      );
+    },
+    AdminPanelHomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AdminPanelHomeScreen(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomeScreen(),
+      );
+    },
+    ListCategoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(child: const ListCategoryScreen()),
       );
     },
     ProductDetailRoute.name: (routeData) {
@@ -42,6 +60,34 @@ abstract class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [AddCategoryScreen]
+class AddCategoryRoute extends PageRouteInfo<void> {
+  const AddCategoryRoute({List<PageRouteInfo>? children})
+      : super(
+          AddCategoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AddCategoryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AdminPanelHomeScreen]
+class AdminPanelHomeRoute extends PageRouteInfo<void> {
+  const AdminPanelHomeRoute({List<PageRouteInfo>? children})
+      : super(
+          AdminPanelHomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AdminPanelHomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HomeScreen]
 class HomeRoute extends PageRouteInfo<void> {
   const HomeRoute({List<PageRouteInfo>? children})
@@ -51,6 +97,20 @@ class HomeRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ListCategoryScreen]
+class ListCategoryRoute extends PageRouteInfo<void> {
+  const ListCategoryRoute({List<PageRouteInfo>? children})
+      : super(
+          ListCategoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ListCategoryRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

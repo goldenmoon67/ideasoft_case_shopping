@@ -15,6 +15,11 @@ homeScreennAppbar(BuildContext context) {
           }),
       IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
       IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),
+      TextButton(
+          child: const Text("Admin Panele Git"),
+          onPressed: () {
+            AutoRouter.of(context).setRoot(const AdminPanelHomeRoute());
+          }),
     ],
   );
 }

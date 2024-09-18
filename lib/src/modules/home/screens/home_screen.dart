@@ -2,9 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/item/slider_item.dart';
-import 'package:ideasoft_case_project_shop/src/modules/home/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ideasoft_case_project_shop/src/modules/home/bloc/home_bloc.dart';
+
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/appbar/home_appbar.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/components/action_now_component.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/components/newsteller.dart';
