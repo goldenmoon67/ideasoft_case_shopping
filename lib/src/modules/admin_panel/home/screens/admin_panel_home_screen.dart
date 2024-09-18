@@ -102,7 +102,7 @@ void _showOptionsDialog(BuildContext context, String type) {
               leading: const Icon(Icons.list, color: Colors.blue),
               title: const Text('Listele'),
               onTap: () {
-                AutoRouter.of(context).push(const AddCategoryRoute());
+                AutoRouter.of(context).push(const ListCategoryRoute());
               },
             ),
             ListTile(

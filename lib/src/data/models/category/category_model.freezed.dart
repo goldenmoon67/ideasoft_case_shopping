@@ -42,7 +42,7 @@ mixin _$CategoryModel {
   String? get metaKeywords => throw _privateConstructorUsedError;
   String? get canonicalUrl => throw _privateConstructorUsedError;
   String? get parent => throw _privateConstructorUsedError;
-  String? get children => throw _privateConstructorUsedError;
+  List<dynamic>? get children => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   int? get isCombine => throw _privateConstructorUsedError;
   int? get isSearchable => throw _privateConstructorUsedError;
@@ -85,7 +85,7 @@ abstract class $CategoryModelCopyWith<$Res> {
       String? metaKeywords,
       String? canonicalUrl,
       String? parent,
-      String? children,
+      List<dynamic>? children,
       String? imageUrl,
       int? isCombine,
       int? isSearchable});
@@ -221,7 +221,7 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
       children: freezed == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<dynamic>?,
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -268,7 +268,7 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
       String? metaKeywords,
       String? canonicalUrl,
       String? parent,
-      String? children,
+      List<dynamic>? children,
       String? imageUrl,
       int? isCombine,
       int? isSearchable});
@@ -400,9 +400,9 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
           : parent // ignore: cast_nullable_to_non_nullable
               as String?,
       children: freezed == children
-          ? _value.children
+          ? _value._children
           : children // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<dynamic>?,
       imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
@@ -444,10 +444,11 @@ class _$CategoryModelImpl implements _CategoryModel {
       required this.metaKeywords,
       required this.canonicalUrl,
       required this.parent,
-      required this.children,
+      required final List<dynamic>? children,
       required this.imageUrl,
       required this.isCombine,
-      required this.isSearchable});
+      required this.isSearchable})
+      : _children = children;
 
   factory _$CategoryModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryModelImplFromJson(json);
@@ -494,8 +495,16 @@ class _$CategoryModelImpl implements _CategoryModel {
   final String? canonicalUrl;
   @override
   final String? parent;
+  final List<dynamic>? _children;
   @override
-  final String? children;
+  List<dynamic>? get children {
+    final value = _children;
+    if (value == null) return null;
+    if (_children is EqualUnmodifiableListView) return _children;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? imageUrl;
   @override
@@ -530,7 +539,8 @@ class _$CategoryModelImpl implements _CategoryModel {
                 other.displayShowcaseContent == displayShowcaseContent) &&
             (identical(other.showcaseContent, showcaseContent) ||
                 other.showcaseContent == showcaseContent) &&
-            (identical(other.showcaseContentDisplayType, showcaseContentDisplayType) ||
+            (identical(other.showcaseContentDisplayType,
+                    showcaseContentDisplayType) ||
                 other.showcaseContentDisplayType ==
                     showcaseContentDisplayType) &&
             (identical(other.displayShowcaseFooterContent,
@@ -554,8 +564,7 @@ class _$CategoryModelImpl implements _CategoryModel {
             (identical(other.canonicalUrl, canonicalUrl) ||
                 other.canonicalUrl == canonicalUrl) &&
             (identical(other.parent, parent) || other.parent == parent) &&
-            (identical(other.children, children) ||
-                other.children == children) &&
+            const DeepCollectionEquality().equals(other._children, _children) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             (identical(other.isCombine, isCombine) ||
@@ -589,7 +598,7 @@ class _$CategoryModelImpl implements _CategoryModel {
         metaKeywords,
         canonicalUrl,
         parent,
-        children,
+        const DeepCollectionEquality().hash(_children),
         imageUrl,
         isCombine,
         isSearchable
@@ -634,7 +643,7 @@ abstract class _CategoryModel implements CategoryModel {
       required final String? metaKeywords,
       required final String? canonicalUrl,
       required final String? parent,
-      required final String? children,
+      required final List<dynamic>? children,
       required final String? imageUrl,
       required final int? isCombine,
       required final int? isSearchable}) = _$CategoryModelImpl;
@@ -685,7 +694,7 @@ abstract class _CategoryModel implements CategoryModel {
   @override
   String? get parent;
   @override
-  String? get children;
+  List<dynamic>? get children;
   @override
   String? get imageUrl;
   @override

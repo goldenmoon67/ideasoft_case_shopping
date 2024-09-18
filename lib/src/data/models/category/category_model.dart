@@ -27,7 +27,7 @@ class CategoryModel with _$CategoryModel {
     required String? metaKeywords,
     required String? canonicalUrl,
     required String? parent,
-    required String? children,
+    required List<dynamic>? children,
     required String? imageUrl,
     required int? isCombine,
     required int? isSearchable,

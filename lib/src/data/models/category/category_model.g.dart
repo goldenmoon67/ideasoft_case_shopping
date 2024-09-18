@@ -32,7 +32,7 @@ _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
       metaKeywords: json['metaKeywords'] as String?,
       canonicalUrl: json['canonicalUrl'] as String?,
       parent: json['parent'] as String?,
-      children: json['children'] as String?,
+      children: json['children'] as List<dynamic>?,
       imageUrl: json['imageUrl'] as String?,
       isCombine: (json['isCombine'] as num?)?.toInt(),
       isSearchable: (json['isSearchable'] as num?)?.toInt(),

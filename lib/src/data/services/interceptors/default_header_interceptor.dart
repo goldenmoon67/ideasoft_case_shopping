@@ -8,7 +8,6 @@ class DefaultHeaderInterceptor extends Interceptor {
   PackageInfo? _packageInfo;
   AndroidDeviceInfo? _androidDeviceInfo;
   IosDeviceInfo? _iosDeviceInfo;
-  String? _deviceId;
 
   @override
   void onRequest(

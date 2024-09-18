@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/category/category_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/bloc/list_category_bloc.dart';
@@ -27,7 +27,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
   final TextEditingController _searchController = TextEditingController();
   bool _isLoading = false;
 
-  List<ProductListResponse> products = [];
+  List<CategoryModel> categories = [];
 
   @override
   void initState() {
@@ -37,19 +37,17 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
   _onListCategoryChanged(String value) {
     String query = value;
 
-    if (query.isNotEmpty) {
-      _performListCategory(query);
-    }
+    _performListCategory(query);
   }
 
   Future<void> _performListCategory(String query) async {
-    products = [];
+    categories = [];
 
     setState(() {
       _isLoading = true;
     });
     BlocProvider.of<ListCategoryBloc>(context)
-        .add(ActionListCategoryEvent(query));
+        .add(ListCategorySearchEvent(query));
   }
 
   @override
@@ -62,9 +60,11 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
           EasyLoading.dismiss(animation: false);
         }
         if (state is ListCategoryResultData) {
+          debugPrint("sadkşlsakdlşsakdaşlslşdsalşakds 454545454545445");
           setState(() {
             _isLoading = false;
-            products.addAll(state.productListResponse);
+            categories.addAll(state.categories);
+            debugPrint(categories.toString());
           });
         }
       },
@@ -83,87 +83,84 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
             backgroundColor: Colors.deepPurple,
             elevation: 0,
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextField(
-                  controller: _searchController,
-                  onChanged: (value) {
-                    _onListCategoryChanged(value);
-                  },
-                  decoration: InputDecoration(
-                    prefixIcon:
-                        const Icon(Icons.search, color: Colors.deepPurple),
-                    labelText: 'Ürün Arama',
-                    labelStyle: const TextStyle(color: Colors.deepPurple),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
+          body: state is ListCategoryResultData || state is ListCategorySucces
+              ? Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextField(
+                        controller: _searchController,
+                        onChanged: (value) {
+                          _onListCategoryChanged(value);
+                        },
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.search,
+                              color: Colors.deepPurple),
+                          labelText: 'Ürün Arama',
+                          labelStyle: const TextStyle(color: Colors.deepPurple),
+                          filled: true,
+                          fillColor: Colors.grey[200],
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      Expanded(
+                        child: _isLoading
+                            ? const Center(
+                                child: CircularProgressIndicator(
+                                  color: Colors.deepPurple,
+                                ),
+                              )
+                            : categories.isEmpty
+                                ? Center(
+                                    child: Text(
+                                      'Sonuç Bulunamadı',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.grey[600],
+                                      ),
+                                    ),
+                                  )
+                                : ListView.builder(
+                                    itemCount: categories.length,
+                                    itemBuilder: (context, index) {
+                                      final category = categories[index];
+
+                                      return ListCategoryResultItem(
+                                        onDismissed: () {
+                                          categories.removeWhere(
+                                              (item) => item.id == category.id);
+                                          BlocProvider.of<ListCategoryBloc>(
+                                                  context)
+                                              .add(DeleteListCategoryEvent(
+                                                  category.id));
+                                        },
+                                        onTap: () {
+                                          AutoRouter.of(context).push(
+                                            ProductDetailRoute(
+                                                productId: category.id),
+                                          );
+                                        },
+                                        name: category.name,
+                                        imageUrl: category.imageUrl,
+                                        percent: category.percent,
+                                        sortOrder: category.sortOrder,
+                                      );
+                                    },
+                                  ),
+                      ),
+                    ],
+                  ),
+                )
+              : const Center(
+                  child: CircularProgressIndicator(
+                    color: Colors.deepPurple,
                   ),
                 ),
-                const SizedBox(height: 20),
-                Expanded(
-                  child: _isLoading
-                      ? const Center(
-                          child: CircularProgressIndicator(
-                            color: Colors.deepPurple,
-                          ),
-                        )
-                      : products.isEmpty
-                          ? Center(
-                              child: Text(
-                                'Sonuç Bulunamadı',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.grey[600],
-                                ),
-                              ),
-                            )
-                          : ListView.builder(
-                              itemCount: products.length,
-                              itemBuilder: (context, index) {
-                                final product = products[index];
-                                final productImage = product.images.isNotEmpty
-                                    ? "https:${product.images[0].originalUrl}.${products[index].images.first.extension}"
-                                    : 'https://via.placeholder.com/150';
-                                final price = product.price1;
-                                final currency = product.currency.abbr;
-                                final discount = product.discount > 0
-                                    ? '${product.discount}% Discount'
-                                    : null;
-                                final stockState = product.stockAmount > 0
-                                    ? "In Stock"
-                                    : "Out of Stock";
-                                final isTaxIncluded = product.taxIncluded == 1
-                                    ? "Tax Included"
-                                    : "Tax Not Included";
-
-                                return ListCategoryResultItem(
-                                  onTap: () {
-                                    AutoRouter.of(context).push(
-                                      ProductDetailRoute(
-                                          productId: products[index].id),
-                                    );
-                                  },
-                                  productImage: productImage,
-                                  fullName: product.fullName,
-                                  price: price,
-                                  currency: currency,
-                                  discount: discount,
-                                  stockState: stockState,
-                                  isTaxIncluded: isTaxIncluded,
-                                );
-                              },
-                            ),
-                ),
-              ],
-            ),
-          ),
         );
       },
     );

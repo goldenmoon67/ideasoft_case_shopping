@@ -7,7 +7,12 @@ class StartListCategoryEvent extends ListCategoryEvent {
   StartListCategoryEvent();
 }
 
-class ActionListCategoryEvent extends ListCategoryEvent {
+class DeleteListCategoryEvent extends ListCategoryEvent {
+  final int id;
+  DeleteListCategoryEvent(this.id);
+}
+
+class ListCategorySearchEvent extends ListCategoryEvent {
   final String query;
-  ActionListCategoryEvent(this.query);
+  ListCategorySearchEvent(this.query);
 }

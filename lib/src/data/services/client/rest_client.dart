@@ -32,5 +32,8 @@ abstract class RestClient {
   Future<CategoryModel> getCategoryDetail(@Path() String id);
 
   @DELETE("categories/{id}")
-  Future<void> deleteCategory(@Path() String id);
+  Future<void> deleteCategory(@Path() int id);
+
+  @GET("categories")
+  Future<List<CategoryModel>> searchCategory(@Query('s') String query);
 }

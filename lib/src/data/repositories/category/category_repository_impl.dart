@@ -13,7 +13,7 @@ class CategoryRepositoryImpl extends CategoryRepository {
   }
 
   @override
-  Future<void> deleteCategory(String id) async {
+  Future<void> deleteCategory(int id) async {
     await client.deleteCategory(id);
   }
 
@@ -25,5 +25,10 @@ class CategoryRepositoryImpl extends CategoryRepository {
   @override
   Future<CategoryModel> getCategoryDetail(String id) async {
     return await client.getCategoryDetail(id);
+  }
+
+  @override
+  Future<List<CategoryModel>> searchCategories(String query) async {
+    return await client.searchCategory(query);
   }
 }
