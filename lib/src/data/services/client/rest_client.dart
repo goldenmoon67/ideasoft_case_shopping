@@ -1,5 +1,6 @@
 import 'package:ideasoft_case_project_shop/src/data/models/category/add_category_request.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/category/category_model.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/product/add/add_product_request.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/slider.dart';
 import 'package:retrofit/error_logger.dart';
@@ -36,4 +37,7 @@ abstract class RestClient {
 
   @GET("categories")
   Future<List<CategoryModel>> searchCategory(@Query('s') String query);
+
+  @POST("products")
+  Future<void> createProduct(@Body() AddProductRequest request);
 }

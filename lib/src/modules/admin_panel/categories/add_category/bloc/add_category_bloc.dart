@@ -6,7 +6,7 @@ import 'package:ideasoft_case_project_shop/src/domain/repositories/slider/slider
 import 'package:ideasoft_case_project_shop/src/utils/di/getit_register.dart';
 
 part 'add_category_event.dart';
-part 'add_category__state.dart';
+part 'add_category_state.dart';
 
 class AddCategoryBloc extends Bloc<AddCategoryEvent, AddCategoryState> {
   final sliderRepository = getIt<SliderRepository>();

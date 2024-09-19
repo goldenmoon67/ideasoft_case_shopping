@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/add_category/screens/add_category_screen.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/add_product/screens/add_product_screen.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/screens/admin_panel_home_screen.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/screens/home_screen.dart';
 import 'package:ideasoft_case_project_shop/src/modules/product/detail/screens/product_detail_screen.dart';
@@ -34,6 +35,9 @@ class AppRouter extends _$AppRouter {
     ),
     AutoRoute(
       page: ListCategoryRoute.page,
+    ),
+    AutoRoute(
+      page: AddProductRoute.page,
     ),
   ];
 }
