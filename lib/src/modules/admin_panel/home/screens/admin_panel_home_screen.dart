@@ -102,21 +102,24 @@ void _showOptionsDialog(BuildContext context, String type) {
               leading: const Icon(Icons.list, color: Colors.blue),
               title: const Text('Listele'),
               onTap: () {
-                AutoRouter.of(context).push(const ListCategoryRoute());
+                AutoRouter.of(context).push(
+                    type == "Ürünler" ? const SearchRoute() : const ListCategoryRoute());
               },
             ),
             ListTile(
               leading: const Icon(Icons.add, color: Colors.green),
               title: const Text('Ekle'),
               onTap: () {
-                AutoRouter.of(context).push(const AddProductRoute());
+                AutoRouter.of(context).push(
+                    type == "Ürünler" ? const AddProductRoute() : const AddCategoryRoute());
               },
             ),
             ListTile(
               leading: const Icon(Icons.delete, color: Colors.red),
               title: const Text('Sil'),
               onTap: () {
-                Navigator.pop(context);
+                AutoRouter.of(context).push(
+                    type == "Ürünler" ? const SearchRoute() : const ListCategoryRoute());
               },
             ),
           ],

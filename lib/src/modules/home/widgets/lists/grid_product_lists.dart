@@ -23,8 +23,12 @@ class GridProductLists extends StatelessWidget {
                 .push(ProductDetailRoute(productId: products[index].id));
           },
               products[index].fullName,
-              products[index].price1.toString() + products[index].currency.abbr,
-              "https:${products[index].images.first.thumbUrl}.${products[index].images.first.extension}");
+              products[index].price1.toString() +
+                  products[index].currency!.abbr,
+              products[index].images != null &&
+                      products[index].images!.isNotEmpty
+                  ? "https:${products[index].images?.first.thumbUrl}.${products[index].images?.first.extension}"
+                  : "");
         });
   }
 }

@@ -8,5 +8,6 @@ final class AddProductInitial extends AddProductState {}
 final class AddProductLoading extends AddProductState {}
 
 final class AddProductSuccesData extends AddProductState {
-  AddProductSuccesData();
+  final int id;
+  AddProductSuccesData(this.id);
 }

@@ -18,7 +18,7 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
     on<AddProductActionEvent>(
       (event, emit) async {
         emit(AddProductLoading());
-        await productRepository.createProduct(
+        var idModel = await productRepository.createProduct(
           AddProductRequest(
             name: event.name,
             sku: event.sku,
@@ -28,7 +28,7 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
             status: 1,
           ),
         );
-        emit(AddProductSuccesData());
+        emit(AddProductSuccesData(idModel.id));
       },
     );
   }

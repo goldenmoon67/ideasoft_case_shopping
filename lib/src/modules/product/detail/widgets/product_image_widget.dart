@@ -25,6 +25,15 @@ class ProductImageWidget extends StatelessWidget {
         child: Image.network(
           imageUrl,
           fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            return const Center(
+              child: Icon(
+                Icons.image_not_supported,
+                color: Colors.grey,
+                size: 50,
+              ),
+            );
+          },
         ),
       ),
     );

@@ -1,5 +1,7 @@
+import 'package:ideasoft_case_project_shop/src/data/common/return_id_model.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/category/add_category_request.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/category/category_model.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/image/create_image_model.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/add/add_product_request.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/slider.dart';
@@ -39,5 +41,8 @@ abstract class RestClient {
   Future<List<CategoryModel>> searchCategory(@Query('s') String query);
 
   @POST("products")
-  Future<void> createProduct(@Body() AddProductRequest request);
+  Future<ReturnIdModel> createProduct(@Body() AddProductRequest request);
+
+  @POST("product_images")
+  Future<void> uploadPhoto(@Body() CreateImageModel request);
 }

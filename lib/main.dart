@@ -1,3 +1,4 @@
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:ideasoft_case_project_shop/src/configs/flavors.dart';
 import 'package:ideasoft_case_project_shop/src/utils/di/getit_register.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
@@ -9,7 +10,17 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await setupGetIt();
+  configureLoading();
+
   runApp(const MyApp());
+}
+
+void configureLoading() {
+  EasyLoading.instance
+    ..loadingStyle = EasyLoadingStyle.light
+    ..maskType = EasyLoadingMaskType.black
+    ..userInteractions = false
+    ..dismissOnTap = false;
 }
 
 class MyApp extends StatefulWidget {
@@ -24,7 +35,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    // initilaze
     super.initState();
   }
 
@@ -51,6 +61,8 @@ class _MyAppState extends State<MyApp> {
             routerDelegate: _appRouter.delegate(),
             routeInformationProvider: _appRouter.routeInfoProvider(),
             routeInformationParser: _appRouter.defaultRouteParser(),
+            builder: EasyLoading.init(),
+
             // builder: EasyLoading.init(),
           ),
         ));

@@ -60,8 +60,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ProductImageWidget(
-                          imageUrl:
-                              "https:${productDetail!.images.first.thumbUrl}.${productDetail!.images.first.extension}",
+                          imageUrl: productDetail!.images != null &&
+                                  productDetail!.images!.isNotEmpty
+                              ? "https:${productDetail!.images?.first.thumbUrl}.${productDetail!.images?.first.extension}"
+                              : "",
                         ),
                         const SizedBox(height: 20),
                         Text(
@@ -76,7 +78,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         const ReviewsWidget(),
                         const SizedBox(height: 20),
                         Text(
-                          '${productDetail!.price1.toString()} ${productDetail!.currency.abbr}',
+                          '${productDetail!.price1.toString()} ${productDetail!.currency!.abbr}',
                           style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -96,9 +98,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          productDetail!.detail.details == ""
+                          productDetail!.detail?.details == ""
                               ? "Dummy details"
-                              : productDetail!.detail.details ??
+                              : productDetail!.detail?.details ??
                                   "Dummy details",
                           style: const TextStyle(
                               fontSize: 16, color: Colors.black54, height: 1.5),

@@ -62,6 +62,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: WrappedRoute(child: const SearchScreen()),
       );
     },
+    UploadPhotoRoute.name: (routeData) {
+      final args = routeData.argsAs<UploadPhotoRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WrappedRoute(
+            child: UploadPhotoScreen(
+          key: args.key,
+          productId: args.productId,
+        )),
+      );
+    },
   };
 }
 
@@ -185,4 +196,42 @@ class SearchRoute extends PageRouteInfo<void> {
   static const String name = 'SearchRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UploadPhotoScreen]
+class UploadPhotoRoute extends PageRouteInfo<UploadPhotoRouteArgs> {
+  UploadPhotoRoute({
+    Key? key,
+    required int productId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          UploadPhotoRoute.name,
+          args: UploadPhotoRouteArgs(
+            key: key,
+            productId: productId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'UploadPhotoRoute';
+
+  static const PageInfo<UploadPhotoRouteArgs> page =
+      PageInfo<UploadPhotoRouteArgs>(name);
+}
+
+class UploadPhotoRouteArgs {
+  const UploadPhotoRouteArgs({
+    this.key,
+    required this.productId,
+  });
+
+  final Key? key;
+
+  final int productId;
+
+  @override
+  String toString() {
+    return 'UploadPhotoRouteArgs{key: $key, productId: $productId}';
+  }
 }

@@ -315,7 +315,40 @@ class _RestClient implements RestClient {
   }
 
   @override
-  Future<void> createProduct(AddProductRequest request) async {
+  Future<ReturnIdModel> createProduct(AddProductRequest request) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = request;
+    final _options = _setStreamType<ReturnIdModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'products',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ReturnIdModel _value;
+    try {
+      _value = ReturnIdModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<void> uploadPhoto(CreateImageModel request) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -327,7 +360,7 @@ class _RestClient implements RestClient {
     )
         .compose(
           _dio.options,
-          'products',
+          'product_images',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -25,27 +25,27 @@ mixin _$ProductListResponse {
   String get fullName => throw _privateConstructorUsedError;
   String get slug => throw _privateConstructorUsedError;
   String get sku => throw _privateConstructorUsedError;
-  String get barcode => throw _privateConstructorUsedError;
+  String? get barcode => throw _privateConstructorUsedError;
   int get stockAmount => throw _privateConstructorUsedError;
   int get price1 => throw _privateConstructorUsedError;
-  Currency get currency => throw _privateConstructorUsedError;
-  int get discount => throw _privateConstructorUsedError;
-  int get discountType => throw _privateConstructorUsedError;
-  int get moneyOrderDiscount => throw _privateConstructorUsedError;
-  int get buyingPrice => throw _privateConstructorUsedError;
-  String get marketPriceDetail => throw _privateConstructorUsedError;
-  int get taxIncluded => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
-  int get warranty => throw _privateConstructorUsedError;
-  int get volumetricWeight => throw _privateConstructorUsedError;
-  String get stockTypeLabel => throw _privateConstructorUsedError;
-  int get customShippingDisabled => throw _privateConstructorUsedError;
-  int get customShippingCost => throw _privateConstructorUsedError;
-  String get distributor => throw _privateConstructorUsedError;
-  int get hasGift => throw _privateConstructorUsedError;
-  String get gift => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
-  int get hasOption => throw _privateConstructorUsedError;
+  Currency? get currency => throw _privateConstructorUsedError;
+  int? get discount => throw _privateConstructorUsedError;
+  int? get discountType => throw _privateConstructorUsedError;
+  int? get moneyOrderDiscount => throw _privateConstructorUsedError;
+  int? get buyingPrice => throw _privateConstructorUsedError;
+  String? get marketPriceDetail => throw _privateConstructorUsedError;
+  int? get taxIncluded => throw _privateConstructorUsedError;
+  int? get tax => throw _privateConstructorUsedError;
+  int? get warranty => throw _privateConstructorUsedError;
+  int? get volumetricWeight => throw _privateConstructorUsedError;
+  String? get stockTypeLabel => throw _privateConstructorUsedError;
+  int? get customShippingDisabled => throw _privateConstructorUsedError;
+  int? get customShippingCost => throw _privateConstructorUsedError;
+  String? get distributor => throw _privateConstructorUsedError;
+  int? get hasGift => throw _privateConstructorUsedError;
+  String? get gift => throw _privateConstructorUsedError;
+  int? get status => throw _privateConstructorUsedError;
+  int? get hasOption => throw _privateConstructorUsedError;
   String get installmentThreshold => throw _privateConstructorUsedError;
   dynamic get homeSortOrder => throw _privateConstructorUsedError;
   dynamic get popularSortOrder => throw _privateConstructorUsedError;
@@ -54,19 +54,19 @@ mixin _$ProductListResponse {
   dynamic get campaignedSortOrder => throw _privateConstructorUsedError;
   dynamic get newSortOrder => throw _privateConstructorUsedError;
   dynamic get discountedSortOrder => throw _privateConstructorUsedError;
-  int get categoryShowcaseStatus => throw _privateConstructorUsedError;
+  int? get categoryShowcaseStatus => throw _privateConstructorUsedError;
   dynamic get midblockSortOrder => throw _privateConstructorUsedError;
-  String get pageTitle => throw _privateConstructorUsedError;
-  String get metaDescription => throw _privateConstructorUsedError;
-  String get metaKeywords => throw _privateConstructorUsedError;
+  String? get pageTitle => throw _privateConstructorUsedError;
+  String? get metaDescription => throw _privateConstructorUsedError;
+  String? get metaKeywords => throw _privateConstructorUsedError;
   dynamic get canonicalUrl => throw _privateConstructorUsedError;
   dynamic get parent => throw _privateConstructorUsedError;
   dynamic get brand => throw _privateConstructorUsedError;
-  ProductDetail get detail => throw _privateConstructorUsedError;
-  List<dynamic> get categories => throw _privateConstructorUsedError;
-  List<dynamic> get prices => throw _privateConstructorUsedError;
-  List<ImageModel> get images => throw _privateConstructorUsedError;
-  List<dynamic> get optionGroups => throw _privateConstructorUsedError;
+  ProductDetail? get detail => throw _privateConstructorUsedError;
+  List<dynamic>? get categories => throw _privateConstructorUsedError;
+  List<dynamic>? get prices => throw _privateConstructorUsedError;
+  List<ImageModel>? get images => throw _privateConstructorUsedError;
+  List<dynamic>? get optionGroups => throw _privateConstructorUsedError;
   DateTime get updatedAt => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
 
@@ -92,27 +92,27 @@ abstract class $ProductListResponseCopyWith<$Res> {
       String fullName,
       String slug,
       String sku,
-      String barcode,
+      String? barcode,
       int stockAmount,
       int price1,
-      Currency currency,
-      int discount,
-      int discountType,
-      int moneyOrderDiscount,
-      int buyingPrice,
-      String marketPriceDetail,
-      int taxIncluded,
-      int tax,
-      int warranty,
-      int volumetricWeight,
-      String stockTypeLabel,
-      int customShippingDisabled,
-      int customShippingCost,
-      String distributor,
-      int hasGift,
-      String gift,
-      int status,
-      int hasOption,
+      Currency? currency,
+      int? discount,
+      int? discountType,
+      int? moneyOrderDiscount,
+      int? buyingPrice,
+      String? marketPriceDetail,
+      int? taxIncluded,
+      int? tax,
+      int? warranty,
+      int? volumetricWeight,
+      String? stockTypeLabel,
+      int? customShippingDisabled,
+      int? customShippingCost,
+      String? distributor,
+      int? hasGift,
+      String? gift,
+      int? status,
+      int? hasOption,
       String installmentThreshold,
       dynamic homeSortOrder,
       dynamic popularSortOrder,
@@ -121,24 +121,24 @@ abstract class $ProductListResponseCopyWith<$Res> {
       dynamic campaignedSortOrder,
       dynamic newSortOrder,
       dynamic discountedSortOrder,
-      int categoryShowcaseStatus,
+      int? categoryShowcaseStatus,
       dynamic midblockSortOrder,
-      String pageTitle,
-      String metaDescription,
-      String metaKeywords,
+      String? pageTitle,
+      String? metaDescription,
+      String? metaKeywords,
       dynamic canonicalUrl,
       dynamic parent,
       dynamic brand,
-      ProductDetail detail,
-      List<dynamic> categories,
-      List<dynamic> prices,
-      List<ImageModel> images,
-      List<dynamic> optionGroups,
+      ProductDetail? detail,
+      List<dynamic>? categories,
+      List<dynamic>? prices,
+      List<ImageModel>? images,
+      List<dynamic>? optionGroups,
       DateTime updatedAt,
       DateTime createdAt});
 
-  $CurrencyCopyWith<$Res> get currency;
-  $ProductDetailCopyWith<$Res> get detail;
+  $CurrencyCopyWith<$Res>? get currency;
+  $ProductDetailCopyWith<$Res>? get detail;
 }
 
 /// @nodoc
@@ -161,27 +161,27 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
     Object? fullName = null,
     Object? slug = null,
     Object? sku = null,
-    Object? barcode = null,
+    Object? barcode = freezed,
     Object? stockAmount = null,
     Object? price1 = null,
-    Object? currency = null,
-    Object? discount = null,
-    Object? discountType = null,
-    Object? moneyOrderDiscount = null,
-    Object? buyingPrice = null,
-    Object? marketPriceDetail = null,
-    Object? taxIncluded = null,
-    Object? tax = null,
-    Object? warranty = null,
-    Object? volumetricWeight = null,
-    Object? stockTypeLabel = null,
-    Object? customShippingDisabled = null,
-    Object? customShippingCost = null,
-    Object? distributor = null,
-    Object? hasGift = null,
-    Object? gift = null,
-    Object? status = null,
-    Object? hasOption = null,
+    Object? currency = freezed,
+    Object? discount = freezed,
+    Object? discountType = freezed,
+    Object? moneyOrderDiscount = freezed,
+    Object? buyingPrice = freezed,
+    Object? marketPriceDetail = freezed,
+    Object? taxIncluded = freezed,
+    Object? tax = freezed,
+    Object? warranty = freezed,
+    Object? volumetricWeight = freezed,
+    Object? stockTypeLabel = freezed,
+    Object? customShippingDisabled = freezed,
+    Object? customShippingCost = freezed,
+    Object? distributor = freezed,
+    Object? hasGift = freezed,
+    Object? gift = freezed,
+    Object? status = freezed,
+    Object? hasOption = freezed,
     Object? installmentThreshold = null,
     Object? homeSortOrder = freezed,
     Object? popularSortOrder = freezed,
@@ -190,19 +190,19 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
     Object? campaignedSortOrder = freezed,
     Object? newSortOrder = freezed,
     Object? discountedSortOrder = freezed,
-    Object? categoryShowcaseStatus = null,
+    Object? categoryShowcaseStatus = freezed,
     Object? midblockSortOrder = freezed,
-    Object? pageTitle = null,
-    Object? metaDescription = null,
-    Object? metaKeywords = null,
+    Object? pageTitle = freezed,
+    Object? metaDescription = freezed,
+    Object? metaKeywords = freezed,
     Object? canonicalUrl = freezed,
     Object? parent = freezed,
     Object? brand = freezed,
-    Object? detail = null,
-    Object? categories = null,
-    Object? prices = null,
-    Object? images = null,
-    Object? optionGroups = null,
+    Object? detail = freezed,
+    Object? categories = freezed,
+    Object? prices = freezed,
+    Object? images = freezed,
+    Object? optionGroups = freezed,
     Object? updatedAt = null,
     Object? createdAt = null,
   }) {
@@ -227,10 +227,10 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
               as String,
-      barcode: null == barcode
+      barcode: freezed == barcode
           ? _value.barcode
           : barcode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stockAmount: null == stockAmount
           ? _value.stockAmount
           : stockAmount // ignore: cast_nullable_to_non_nullable
@@ -239,78 +239,78 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
           ? _value.price1
           : price1 // ignore: cast_nullable_to_non_nullable
               as int,
-      currency: null == currency
+      currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as Currency,
-      discount: null == discount
+              as Currency?,
+      discount: freezed == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
-              as int,
-      discountType: null == discountType
+              as int?,
+      discountType: freezed == discountType
           ? _value.discountType
           : discountType // ignore: cast_nullable_to_non_nullable
-              as int,
-      moneyOrderDiscount: null == moneyOrderDiscount
+              as int?,
+      moneyOrderDiscount: freezed == moneyOrderDiscount
           ? _value.moneyOrderDiscount
           : moneyOrderDiscount // ignore: cast_nullable_to_non_nullable
-              as int,
-      buyingPrice: null == buyingPrice
+              as int?,
+      buyingPrice: freezed == buyingPrice
           ? _value.buyingPrice
           : buyingPrice // ignore: cast_nullable_to_non_nullable
-              as int,
-      marketPriceDetail: null == marketPriceDetail
+              as int?,
+      marketPriceDetail: freezed == marketPriceDetail
           ? _value.marketPriceDetail
           : marketPriceDetail // ignore: cast_nullable_to_non_nullable
-              as String,
-      taxIncluded: null == taxIncluded
+              as String?,
+      taxIncluded: freezed == taxIncluded
           ? _value.taxIncluded
           : taxIncluded // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
+              as int?,
+      tax: freezed == tax
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      warranty: null == warranty
+              as int?,
+      warranty: freezed == warranty
           ? _value.warranty
           : warranty // ignore: cast_nullable_to_non_nullable
-              as int,
-      volumetricWeight: null == volumetricWeight
+              as int?,
+      volumetricWeight: freezed == volumetricWeight
           ? _value.volumetricWeight
           : volumetricWeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      stockTypeLabel: null == stockTypeLabel
+              as int?,
+      stockTypeLabel: freezed == stockTypeLabel
           ? _value.stockTypeLabel
           : stockTypeLabel // ignore: cast_nullable_to_non_nullable
-              as String,
-      customShippingDisabled: null == customShippingDisabled
+              as String?,
+      customShippingDisabled: freezed == customShippingDisabled
           ? _value.customShippingDisabled
           : customShippingDisabled // ignore: cast_nullable_to_non_nullable
-              as int,
-      customShippingCost: null == customShippingCost
+              as int?,
+      customShippingCost: freezed == customShippingCost
           ? _value.customShippingCost
           : customShippingCost // ignore: cast_nullable_to_non_nullable
-              as int,
-      distributor: null == distributor
+              as int?,
+      distributor: freezed == distributor
           ? _value.distributor
           : distributor // ignore: cast_nullable_to_non_nullable
-              as String,
-      hasGift: null == hasGift
+              as String?,
+      hasGift: freezed == hasGift
           ? _value.hasGift
           : hasGift // ignore: cast_nullable_to_non_nullable
-              as int,
-      gift: null == gift
+              as int?,
+      gift: freezed == gift
           ? _value.gift
           : gift // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
+              as String?,
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
-      hasOption: null == hasOption
+              as int?,
+      hasOption: freezed == hasOption
           ? _value.hasOption
           : hasOption // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       installmentThreshold: null == installmentThreshold
           ? _value.installmentThreshold
           : installmentThreshold // ignore: cast_nullable_to_non_nullable
@@ -343,26 +343,26 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
           ? _value.discountedSortOrder
           : discountedSortOrder // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      categoryShowcaseStatus: null == categoryShowcaseStatus
+      categoryShowcaseStatus: freezed == categoryShowcaseStatus
           ? _value.categoryShowcaseStatus
           : categoryShowcaseStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       midblockSortOrder: freezed == midblockSortOrder
           ? _value.midblockSortOrder
           : midblockSortOrder // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      pageTitle: null == pageTitle
+      pageTitle: freezed == pageTitle
           ? _value.pageTitle
           : pageTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      metaDescription: null == metaDescription
+              as String?,
+      metaDescription: freezed == metaDescription
           ? _value.metaDescription
           : metaDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      metaKeywords: null == metaKeywords
+              as String?,
+      metaKeywords: freezed == metaKeywords
           ? _value.metaKeywords
           : metaKeywords // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       canonicalUrl: freezed == canonicalUrl
           ? _value.canonicalUrl
           : canonicalUrl // ignore: cast_nullable_to_non_nullable
@@ -375,26 +375,26 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      detail: null == detail
+      detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
-              as ProductDetail,
-      categories: null == categories
+              as ProductDetail?,
+      categories: freezed == categories
           ? _value.categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      prices: null == prices
+              as List<dynamic>?,
+      prices: freezed == prices
           ? _value.prices
           : prices // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      images: null == images
+              as List<dynamic>?,
+      images: freezed == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageModel>,
-      optionGroups: null == optionGroups
+              as List<ImageModel>?,
+      optionGroups: freezed == optionGroups
           ? _value.optionGroups
           : optionGroups // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -410,8 +410,12 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $CurrencyCopyWith<$Res> get currency {
-    return $CurrencyCopyWith<$Res>(_value.currency, (value) {
+  $CurrencyCopyWith<$Res>? get currency {
+    if (_value.currency == null) {
+      return null;
+    }
+
+    return $CurrencyCopyWith<$Res>(_value.currency!, (value) {
       return _then(_value.copyWith(currency: value) as $Val);
     });
   }
@@ -420,8 +424,12 @@ class _$ProductListResponseCopyWithImpl<$Res, $Val extends ProductListResponse>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ProductDetailCopyWith<$Res> get detail {
-    return $ProductDetailCopyWith<$Res>(_value.detail, (value) {
+  $ProductDetailCopyWith<$Res>? get detail {
+    if (_value.detail == null) {
+      return null;
+    }
+
+    return $ProductDetailCopyWith<$Res>(_value.detail!, (value) {
       return _then(_value.copyWith(detail: value) as $Val);
     });
   }
@@ -441,27 +449,27 @@ abstract class _$$ProductListResponseImplCopyWith<$Res>
       String fullName,
       String slug,
       String sku,
-      String barcode,
+      String? barcode,
       int stockAmount,
       int price1,
-      Currency currency,
-      int discount,
-      int discountType,
-      int moneyOrderDiscount,
-      int buyingPrice,
-      String marketPriceDetail,
-      int taxIncluded,
-      int tax,
-      int warranty,
-      int volumetricWeight,
-      String stockTypeLabel,
-      int customShippingDisabled,
-      int customShippingCost,
-      String distributor,
-      int hasGift,
-      String gift,
-      int status,
-      int hasOption,
+      Currency? currency,
+      int? discount,
+      int? discountType,
+      int? moneyOrderDiscount,
+      int? buyingPrice,
+      String? marketPriceDetail,
+      int? taxIncluded,
+      int? tax,
+      int? warranty,
+      int? volumetricWeight,
+      String? stockTypeLabel,
+      int? customShippingDisabled,
+      int? customShippingCost,
+      String? distributor,
+      int? hasGift,
+      String? gift,
+      int? status,
+      int? hasOption,
       String installmentThreshold,
       dynamic homeSortOrder,
       dynamic popularSortOrder,
@@ -470,26 +478,26 @@ abstract class _$$ProductListResponseImplCopyWith<$Res>
       dynamic campaignedSortOrder,
       dynamic newSortOrder,
       dynamic discountedSortOrder,
-      int categoryShowcaseStatus,
+      int? categoryShowcaseStatus,
       dynamic midblockSortOrder,
-      String pageTitle,
-      String metaDescription,
-      String metaKeywords,
+      String? pageTitle,
+      String? metaDescription,
+      String? metaKeywords,
       dynamic canonicalUrl,
       dynamic parent,
       dynamic brand,
-      ProductDetail detail,
-      List<dynamic> categories,
-      List<dynamic> prices,
-      List<ImageModel> images,
-      List<dynamic> optionGroups,
+      ProductDetail? detail,
+      List<dynamic>? categories,
+      List<dynamic>? prices,
+      List<ImageModel>? images,
+      List<dynamic>? optionGroups,
       DateTime updatedAt,
       DateTime createdAt});
 
   @override
-  $CurrencyCopyWith<$Res> get currency;
+  $CurrencyCopyWith<$Res>? get currency;
   @override
-  $ProductDetailCopyWith<$Res> get detail;
+  $ProductDetailCopyWith<$Res>? get detail;
 }
 
 /// @nodoc
@@ -510,27 +518,27 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
     Object? fullName = null,
     Object? slug = null,
     Object? sku = null,
-    Object? barcode = null,
+    Object? barcode = freezed,
     Object? stockAmount = null,
     Object? price1 = null,
-    Object? currency = null,
-    Object? discount = null,
-    Object? discountType = null,
-    Object? moneyOrderDiscount = null,
-    Object? buyingPrice = null,
-    Object? marketPriceDetail = null,
-    Object? taxIncluded = null,
-    Object? tax = null,
-    Object? warranty = null,
-    Object? volumetricWeight = null,
-    Object? stockTypeLabel = null,
-    Object? customShippingDisabled = null,
-    Object? customShippingCost = null,
-    Object? distributor = null,
-    Object? hasGift = null,
-    Object? gift = null,
-    Object? status = null,
-    Object? hasOption = null,
+    Object? currency = freezed,
+    Object? discount = freezed,
+    Object? discountType = freezed,
+    Object? moneyOrderDiscount = freezed,
+    Object? buyingPrice = freezed,
+    Object? marketPriceDetail = freezed,
+    Object? taxIncluded = freezed,
+    Object? tax = freezed,
+    Object? warranty = freezed,
+    Object? volumetricWeight = freezed,
+    Object? stockTypeLabel = freezed,
+    Object? customShippingDisabled = freezed,
+    Object? customShippingCost = freezed,
+    Object? distributor = freezed,
+    Object? hasGift = freezed,
+    Object? gift = freezed,
+    Object? status = freezed,
+    Object? hasOption = freezed,
     Object? installmentThreshold = null,
     Object? homeSortOrder = freezed,
     Object? popularSortOrder = freezed,
@@ -539,19 +547,19 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
     Object? campaignedSortOrder = freezed,
     Object? newSortOrder = freezed,
     Object? discountedSortOrder = freezed,
-    Object? categoryShowcaseStatus = null,
+    Object? categoryShowcaseStatus = freezed,
     Object? midblockSortOrder = freezed,
-    Object? pageTitle = null,
-    Object? metaDescription = null,
-    Object? metaKeywords = null,
+    Object? pageTitle = freezed,
+    Object? metaDescription = freezed,
+    Object? metaKeywords = freezed,
     Object? canonicalUrl = freezed,
     Object? parent = freezed,
     Object? brand = freezed,
-    Object? detail = null,
-    Object? categories = null,
-    Object? prices = null,
-    Object? images = null,
-    Object? optionGroups = null,
+    Object? detail = freezed,
+    Object? categories = freezed,
+    Object? prices = freezed,
+    Object? images = freezed,
+    Object? optionGroups = freezed,
     Object? updatedAt = null,
     Object? createdAt = null,
   }) {
@@ -576,10 +584,10 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
           ? _value.sku
           : sku // ignore: cast_nullable_to_non_nullable
               as String,
-      barcode: null == barcode
+      barcode: freezed == barcode
           ? _value.barcode
           : barcode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stockAmount: null == stockAmount
           ? _value.stockAmount
           : stockAmount // ignore: cast_nullable_to_non_nullable
@@ -588,78 +596,78 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
           ? _value.price1
           : price1 // ignore: cast_nullable_to_non_nullable
               as int,
-      currency: null == currency
+      currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as Currency,
-      discount: null == discount
+              as Currency?,
+      discount: freezed == discount
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
-              as int,
-      discountType: null == discountType
+              as int?,
+      discountType: freezed == discountType
           ? _value.discountType
           : discountType // ignore: cast_nullable_to_non_nullable
-              as int,
-      moneyOrderDiscount: null == moneyOrderDiscount
+              as int?,
+      moneyOrderDiscount: freezed == moneyOrderDiscount
           ? _value.moneyOrderDiscount
           : moneyOrderDiscount // ignore: cast_nullable_to_non_nullable
-              as int,
-      buyingPrice: null == buyingPrice
+              as int?,
+      buyingPrice: freezed == buyingPrice
           ? _value.buyingPrice
           : buyingPrice // ignore: cast_nullable_to_non_nullable
-              as int,
-      marketPriceDetail: null == marketPriceDetail
+              as int?,
+      marketPriceDetail: freezed == marketPriceDetail
           ? _value.marketPriceDetail
           : marketPriceDetail // ignore: cast_nullable_to_non_nullable
-              as String,
-      taxIncluded: null == taxIncluded
+              as String?,
+      taxIncluded: freezed == taxIncluded
           ? _value.taxIncluded
           : taxIncluded // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
+              as int?,
+      tax: freezed == tax
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      warranty: null == warranty
+              as int?,
+      warranty: freezed == warranty
           ? _value.warranty
           : warranty // ignore: cast_nullable_to_non_nullable
-              as int,
-      volumetricWeight: null == volumetricWeight
+              as int?,
+      volumetricWeight: freezed == volumetricWeight
           ? _value.volumetricWeight
           : volumetricWeight // ignore: cast_nullable_to_non_nullable
-              as int,
-      stockTypeLabel: null == stockTypeLabel
+              as int?,
+      stockTypeLabel: freezed == stockTypeLabel
           ? _value.stockTypeLabel
           : stockTypeLabel // ignore: cast_nullable_to_non_nullable
-              as String,
-      customShippingDisabled: null == customShippingDisabled
+              as String?,
+      customShippingDisabled: freezed == customShippingDisabled
           ? _value.customShippingDisabled
           : customShippingDisabled // ignore: cast_nullable_to_non_nullable
-              as int,
-      customShippingCost: null == customShippingCost
+              as int?,
+      customShippingCost: freezed == customShippingCost
           ? _value.customShippingCost
           : customShippingCost // ignore: cast_nullable_to_non_nullable
-              as int,
-      distributor: null == distributor
+              as int?,
+      distributor: freezed == distributor
           ? _value.distributor
           : distributor // ignore: cast_nullable_to_non_nullable
-              as String,
-      hasGift: null == hasGift
+              as String?,
+      hasGift: freezed == hasGift
           ? _value.hasGift
           : hasGift // ignore: cast_nullable_to_non_nullable
-              as int,
-      gift: null == gift
+              as int?,
+      gift: freezed == gift
           ? _value.gift
           : gift // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
+              as String?,
+      status: freezed == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
-      hasOption: null == hasOption
+              as int?,
+      hasOption: freezed == hasOption
           ? _value.hasOption
           : hasOption // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       installmentThreshold: null == installmentThreshold
           ? _value.installmentThreshold
           : installmentThreshold // ignore: cast_nullable_to_non_nullable
@@ -692,26 +700,26 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
           ? _value.discountedSortOrder
           : discountedSortOrder // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      categoryShowcaseStatus: null == categoryShowcaseStatus
+      categoryShowcaseStatus: freezed == categoryShowcaseStatus
           ? _value.categoryShowcaseStatus
           : categoryShowcaseStatus // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       midblockSortOrder: freezed == midblockSortOrder
           ? _value.midblockSortOrder
           : midblockSortOrder // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      pageTitle: null == pageTitle
+      pageTitle: freezed == pageTitle
           ? _value.pageTitle
           : pageTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-      metaDescription: null == metaDescription
+              as String?,
+      metaDescription: freezed == metaDescription
           ? _value.metaDescription
           : metaDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      metaKeywords: null == metaKeywords
+              as String?,
+      metaKeywords: freezed == metaKeywords
           ? _value.metaKeywords
           : metaKeywords // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       canonicalUrl: freezed == canonicalUrl
           ? _value.canonicalUrl
           : canonicalUrl // ignore: cast_nullable_to_non_nullable
@@ -724,26 +732,26 @@ class __$$ProductListResponseImplCopyWithImpl<$Res>
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      detail: null == detail
+      detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
-              as ProductDetail,
-      categories: null == categories
+              as ProductDetail?,
+      categories: freezed == categories
           ? _value._categories
           : categories // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      prices: null == prices
+              as List<dynamic>?,
+      prices: freezed == prices
           ? _value._prices
           : prices // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
-      images: null == images
+              as List<dynamic>?,
+      images: freezed == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
-              as List<ImageModel>,
-      optionGroups: null == optionGroups
+              as List<ImageModel>?,
+      optionGroups: freezed == optionGroups
           ? _value._optionGroups
           : optionGroups // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<dynamic>?,
       updatedAt: null == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
@@ -803,10 +811,10 @@ class _$ProductListResponseImpl implements _ProductListResponse {
       required this.parent,
       required this.brand,
       required this.detail,
-      required final List<dynamic> categories,
-      required final List<dynamic> prices,
-      required final List<ImageModel> images,
-      required final List<dynamic> optionGroups,
+      required final List<dynamic>? categories,
+      required final List<dynamic>? prices,
+      required final List<ImageModel>? images,
+      required final List<dynamic>? optionGroups,
       required this.updatedAt,
       required this.createdAt})
       : _categories = categories,
@@ -828,47 +836,47 @@ class _$ProductListResponseImpl implements _ProductListResponse {
   @override
   final String sku;
   @override
-  final String barcode;
+  final String? barcode;
   @override
   final int stockAmount;
   @override
   final int price1;
   @override
-  final Currency currency;
+  final Currency? currency;
   @override
-  final int discount;
+  final int? discount;
   @override
-  final int discountType;
+  final int? discountType;
   @override
-  final int moneyOrderDiscount;
+  final int? moneyOrderDiscount;
   @override
-  final int buyingPrice;
+  final int? buyingPrice;
   @override
-  final String marketPriceDetail;
+  final String? marketPriceDetail;
   @override
-  final int taxIncluded;
+  final int? taxIncluded;
   @override
-  final int tax;
+  final int? tax;
   @override
-  final int warranty;
+  final int? warranty;
   @override
-  final int volumetricWeight;
+  final int? volumetricWeight;
   @override
-  final String stockTypeLabel;
+  final String? stockTypeLabel;
   @override
-  final int customShippingDisabled;
+  final int? customShippingDisabled;
   @override
-  final int customShippingCost;
+  final int? customShippingCost;
   @override
-  final String distributor;
+  final String? distributor;
   @override
-  final int hasGift;
+  final int? hasGift;
   @override
-  final String gift;
+  final String? gift;
   @override
-  final int status;
+  final int? status;
   @override
-  final int hasOption;
+  final int? hasOption;
   @override
   final String installmentThreshold;
   @override
@@ -886,15 +894,15 @@ class _$ProductListResponseImpl implements _ProductListResponse {
   @override
   final dynamic discountedSortOrder;
   @override
-  final int categoryShowcaseStatus;
+  final int? categoryShowcaseStatus;
   @override
   final dynamic midblockSortOrder;
   @override
-  final String pageTitle;
+  final String? pageTitle;
   @override
-  final String metaDescription;
+  final String? metaDescription;
   @override
-  final String metaKeywords;
+  final String? metaKeywords;
   @override
   final dynamic canonicalUrl;
   @override
@@ -902,37 +910,45 @@ class _$ProductListResponseImpl implements _ProductListResponse {
   @override
   final dynamic brand;
   @override
-  final ProductDetail detail;
-  final List<dynamic> _categories;
+  final ProductDetail? detail;
+  final List<dynamic>? _categories;
   @override
-  List<dynamic> get categories {
+  List<dynamic>? get categories {
+    final value = _categories;
+    if (value == null) return null;
     if (_categories is EqualUnmodifiableListView) return _categories;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categories);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<dynamic> _prices;
+  final List<dynamic>? _prices;
   @override
-  List<dynamic> get prices {
+  List<dynamic>? get prices {
+    final value = _prices;
+    if (value == null) return null;
     if (_prices is EqualUnmodifiableListView) return _prices;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_prices);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<ImageModel> _images;
+  final List<ImageModel>? _images;
   @override
-  List<ImageModel> get images {
+  List<ImageModel>? get images {
+    final value = _images;
+    if (value == null) return null;
     if (_images is EqualUnmodifiableListView) return _images;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_images);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<dynamic> _optionGroups;
+  final List<dynamic>? _optionGroups;
   @override
-  List<dynamic> get optionGroups {
+  List<dynamic>? get optionGroups {
+    final value = _optionGroups;
+    if (value == null) return null;
     if (_optionGroups is EqualUnmodifiableListView) return _optionGroups;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_optionGroups);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -1114,27 +1130,27 @@ abstract class _ProductListResponse implements ProductListResponse {
       required final String fullName,
       required final String slug,
       required final String sku,
-      required final String barcode,
+      required final String? barcode,
       required final int stockAmount,
       required final int price1,
-      required final Currency currency,
-      required final int discount,
-      required final int discountType,
-      required final int moneyOrderDiscount,
-      required final int buyingPrice,
-      required final String marketPriceDetail,
-      required final int taxIncluded,
-      required final int tax,
-      required final int warranty,
-      required final int volumetricWeight,
-      required final String stockTypeLabel,
-      required final int customShippingDisabled,
-      required final int customShippingCost,
-      required final String distributor,
-      required final int hasGift,
-      required final String gift,
-      required final int status,
-      required final int hasOption,
+      required final Currency? currency,
+      required final int? discount,
+      required final int? discountType,
+      required final int? moneyOrderDiscount,
+      required final int? buyingPrice,
+      required final String? marketPriceDetail,
+      required final int? taxIncluded,
+      required final int? tax,
+      required final int? warranty,
+      required final int? volumetricWeight,
+      required final String? stockTypeLabel,
+      required final int? customShippingDisabled,
+      required final int? customShippingCost,
+      required final String? distributor,
+      required final int? hasGift,
+      required final String? gift,
+      required final int? status,
+      required final int? hasOption,
       required final String installmentThreshold,
       required final dynamic homeSortOrder,
       required final dynamic popularSortOrder,
@@ -1143,19 +1159,19 @@ abstract class _ProductListResponse implements ProductListResponse {
       required final dynamic campaignedSortOrder,
       required final dynamic newSortOrder,
       required final dynamic discountedSortOrder,
-      required final int categoryShowcaseStatus,
+      required final int? categoryShowcaseStatus,
       required final dynamic midblockSortOrder,
-      required final String pageTitle,
-      required final String metaDescription,
-      required final String metaKeywords,
+      required final String? pageTitle,
+      required final String? metaDescription,
+      required final String? metaKeywords,
       required final dynamic canonicalUrl,
       required final dynamic parent,
       required final dynamic brand,
-      required final ProductDetail detail,
-      required final List<dynamic> categories,
-      required final List<dynamic> prices,
-      required final List<ImageModel> images,
-      required final List<dynamic> optionGroups,
+      required final ProductDetail? detail,
+      required final List<dynamic>? categories,
+      required final List<dynamic>? prices,
+      required final List<ImageModel>? images,
+      required final List<dynamic>? optionGroups,
       required final DateTime updatedAt,
       required final DateTime createdAt}) = _$ProductListResponseImpl;
 
@@ -1173,47 +1189,47 @@ abstract class _ProductListResponse implements ProductListResponse {
   @override
   String get sku;
   @override
-  String get barcode;
+  String? get barcode;
   @override
   int get stockAmount;
   @override
   int get price1;
   @override
-  Currency get currency;
+  Currency? get currency;
   @override
-  int get discount;
+  int? get discount;
   @override
-  int get discountType;
+  int? get discountType;
   @override
-  int get moneyOrderDiscount;
+  int? get moneyOrderDiscount;
   @override
-  int get buyingPrice;
+  int? get buyingPrice;
   @override
-  String get marketPriceDetail;
+  String? get marketPriceDetail;
   @override
-  int get taxIncluded;
+  int? get taxIncluded;
   @override
-  int get tax;
+  int? get tax;
   @override
-  int get warranty;
+  int? get warranty;
   @override
-  int get volumetricWeight;
+  int? get volumetricWeight;
   @override
-  String get stockTypeLabel;
+  String? get stockTypeLabel;
   @override
-  int get customShippingDisabled;
+  int? get customShippingDisabled;
   @override
-  int get customShippingCost;
+  int? get customShippingCost;
   @override
-  String get distributor;
+  String? get distributor;
   @override
-  int get hasGift;
+  int? get hasGift;
   @override
-  String get gift;
+  String? get gift;
   @override
-  int get status;
+  int? get status;
   @override
-  int get hasOption;
+  int? get hasOption;
   @override
   String get installmentThreshold;
   @override
@@ -1231,15 +1247,15 @@ abstract class _ProductListResponse implements ProductListResponse {
   @override
   dynamic get discountedSortOrder;
   @override
-  int get categoryShowcaseStatus;
+  int? get categoryShowcaseStatus;
   @override
   dynamic get midblockSortOrder;
   @override
-  String get pageTitle;
+  String? get pageTitle;
   @override
-  String get metaDescription;
+  String? get metaDescription;
   @override
-  String get metaKeywords;
+  String? get metaKeywords;
   @override
   dynamic get canonicalUrl;
   @override
@@ -1247,15 +1263,15 @@ abstract class _ProductListResponse implements ProductListResponse {
   @override
   dynamic get brand;
   @override
-  ProductDetail get detail;
+  ProductDetail? get detail;
   @override
-  List<dynamic> get categories;
+  List<dynamic>? get categories;
   @override
-  List<dynamic> get prices;
+  List<dynamic>? get prices;
   @override
-  List<ImageModel> get images;
+  List<ImageModel>? get images;
   @override
-  List<dynamic> get optionGroups;
+  List<dynamic>? get optionGroups;
   @override
   DateTime get updatedAt;
   @override

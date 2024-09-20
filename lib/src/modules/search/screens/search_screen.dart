@@ -127,12 +127,13 @@ class _SearchScreenState extends State<SearchScreen> {
                               itemCount: products.length,
                               itemBuilder: (context, index) {
                                 final product = products[index];
-                                final productImage = product.images.isNotEmpty
-                                    ? "https:${product.images[0].originalUrl}.${products[index].images.first.extension}"
+                                final productImage = product.images != null &&
+                                        product.images!.isNotEmpty
+                                    ? "https:${product.images![0].originalUrl}.${products[index].images!.first.extension}"
                                     : 'https://via.placeholder.com/150';
                                 final price = product.price1;
-                                final currency = product.currency.abbr;
-                                final discount = product.discount > 0
+                                final currency = product.currency!.abbr;
+                                final discount = product.discount! > 0
                                     ? '${product.discount}% Discount'
                                     : null;
                                 final stockState = product.stockAmount > 0

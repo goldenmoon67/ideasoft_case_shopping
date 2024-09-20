@@ -1,3 +1,5 @@
+import 'package:ideasoft_case_project_shop/src/data/common/return_id_model.dart';
+import 'package:ideasoft_case_project_shop/src/data/models/image/create_image_model.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/add/add_product_request.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/client/rest_client.dart';
@@ -25,7 +27,12 @@ class ProductRepositoryImpl extends ProductRepository {
   }
 
   @override
-  Future<void> createProduct(AddProductRequest request) async {
-    await client.createProduct(request);
+  Future<ReturnIdModel> createProduct(AddProductRequest request) async {
+    return await client.createProduct(request);
+  }
+
+  @override
+  Future<void> uploadImage(CreateImageModel request) async {
+    await client.uploadPhoto(request);
   }
 }

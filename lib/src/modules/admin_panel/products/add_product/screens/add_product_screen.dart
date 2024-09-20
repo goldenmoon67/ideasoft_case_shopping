@@ -53,6 +53,8 @@ class _AddProductScreenState extends State<AddProductScreen> {
 
         if (state is AddProductSuccesData) {
           AutoRouter.of(context).setRoot(const AdminPanelHomeRoute());
+          AutoRouter.of(context).push(UploadPhotoRoute(productId: state.id));
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('Ürün oluşturuldu'),
