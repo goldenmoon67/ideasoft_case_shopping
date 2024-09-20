@@ -34,7 +34,7 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
   final TextEditingController _metaKeywordsController = TextEditingController();
   final TextEditingController _canonicalUrlController = TextEditingController();
 
-  int _status = 0;
+  int _status = 1;
 
   @override
   void dispose() {
@@ -113,11 +113,6 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
                     decoration: const InputDecoration(labelText: 'Yüzde'),
                     keyboardType: TextInputType.number,
                   ),
-                  TextFormField(
-                    controller: _imageFileController,
-                    decoration:
-                        const InputDecoration(labelText: 'Resim Dosyası'),
-                  ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -158,7 +153,6 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
       sortOrder: int.tryParse(_sortOrderController.text) ?? 999,
       status: _status,
       percent: int.tryParse(_percentController.text) ?? 1,
-      imageFile: _imageFileController.text,
     ));
   }
 }

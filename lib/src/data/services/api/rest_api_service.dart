@@ -7,7 +7,6 @@ import 'package:ideasoft_case_project_shop/src/configs/flavors.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/interceptors/auth_interceptor.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/interceptors/default_header_interceptor.dart';
 import 'package:ideasoft_case_project_shop/src/data/services/interceptors/error_interceptor.dart';
-import 'package:ideasoft_case_project_shop/src/data/services/transformers/flutter_transformer.dart';
 import 'package:ideasoft_case_project_shop/src/utils/di/getit_register.dart';
 import 'package:logger/logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -62,35 +61,6 @@ class RestApiService {
     }
 
     return dio;
-  }
-
-  Dio _createOAuthDio() {
-    var oauthDio = Dio(BaseOptions(
-      baseUrl: F.baseUrl,
-      connectTimeout: const Duration(milliseconds: 60 * 1000),
-      receiveTimeout: const Duration(milliseconds: 60 * 1000),
-      headers: {
-        'Authorization':
-            'Bearer your_static_access_token', // Buraya token'ı ekleyin
-      },
-    ));
-
-    oauthDio.transformer = FlutterTransformer();
-
-    if (F.appFlavor == Flavor.dev) {
-      final logger = getIt<Logger>();
-      oauthDio.interceptors.add(PrettyDioLogger(
-        requestHeader: true,
-        requestBody: true,
-        responseHeader: true,
-        maxWidth: 180,
-        logPrint: (obj) => logger.i(obj),
-      ));
-    }
-
-    oauthDio.interceptors.add(ErrorInterceptor());
-
-    return oauthDio;
   }
 
   HttpClient _onHttpClientCreate() {

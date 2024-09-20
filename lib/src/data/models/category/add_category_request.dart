@@ -10,7 +10,6 @@ class AddCategoryRequest with _$AddCategoryRequest {
     required int? sortOrder,
     required int status,
     required int? percent,
-    required String? imageFile,
   }) = _AddCategoryRequest;
 
   factory AddCategoryRequest.fromJson(Map<String, dynamic> json) =>

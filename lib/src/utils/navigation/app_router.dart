@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/add_category/screens/add_category_screen.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/add_product/screens/add_product_screen.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/screens/admin_panel_home_screen.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/upload_photo/screens/upload_photo_screen.dart';

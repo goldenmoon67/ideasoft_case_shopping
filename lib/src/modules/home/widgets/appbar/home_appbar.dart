@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 homeScreennAppbar(BuildContext context) {
@@ -11,7 +12,8 @@ homeScreennAppbar(BuildContext context) {
       IconButton(
           icon: const Icon(Icons.search),
           onPressed: () {
-            AutoRouter.of(context).push(const SearchRoute());
+            AutoRouter.of(context)
+                .push(SearchRoute(listScreenType: ListScreenType.list));
           }),
       IconButton(icon: const Icon(Icons.favorite_border), onPressed: () {}),
       IconButton(icon: const Icon(Icons.shopping_cart), onPressed: () {}),

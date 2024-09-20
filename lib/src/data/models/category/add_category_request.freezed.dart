@@ -24,7 +24,6 @@ mixin _$AddCategoryRequest {
   int? get sortOrder => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   int? get percent => throw _privateConstructorUsedError;
-  String? get imageFile => throw _privateConstructorUsedError;
 
   /// Serializes this AddCategoryRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -42,12 +41,7 @@ abstract class $AddCategoryRequestCopyWith<$Res> {
           AddCategoryRequest value, $Res Function(AddCategoryRequest) then) =
       _$AddCategoryRequestCopyWithImpl<$Res, AddCategoryRequest>;
   @useResult
-  $Res call(
-      {String name,
-      int? sortOrder,
-      int status,
-      int? percent,
-      String? imageFile});
+  $Res call({String name, int? sortOrder, int status, int? percent});
 }
 
 /// @nodoc
@@ -69,7 +63,6 @@ class _$AddCategoryRequestCopyWithImpl<$Res, $Val extends AddCategoryRequest>
     Object? sortOrder = freezed,
     Object? status = null,
     Object? percent = freezed,
-    Object? imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -88,10 +81,6 @@ class _$AddCategoryRequestCopyWithImpl<$Res, $Val extends AddCategoryRequest>
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as int?,
-      imageFile: freezed == imageFile
-          ? _value.imageFile
-          : imageFile // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -104,12 +93,7 @@ abstract class _$$AddCategoryRequestImplCopyWith<$Res>
       __$$AddCategoryRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String name,
-      int? sortOrder,
-      int status,
-      int? percent,
-      String? imageFile});
+  $Res call({String name, int? sortOrder, int status, int? percent});
 }
 
 /// @nodoc
@@ -129,7 +113,6 @@ class __$$AddCategoryRequestImplCopyWithImpl<$Res>
     Object? sortOrder = freezed,
     Object? status = null,
     Object? percent = freezed,
-    Object? imageFile = freezed,
   }) {
     return _then(_$AddCategoryRequestImpl(
       name: null == name
@@ -148,10 +131,6 @@ class __$$AddCategoryRequestImplCopyWithImpl<$Res>
           ? _value.percent
           : percent // ignore: cast_nullable_to_non_nullable
               as int?,
-      imageFile: freezed == imageFile
-          ? _value.imageFile
-          : imageFile // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -163,8 +142,7 @@ class _$AddCategoryRequestImpl implements _AddCategoryRequest {
       {required this.name,
       required this.sortOrder,
       required this.status,
-      required this.percent,
-      required this.imageFile});
+      required this.percent});
 
   factory _$AddCategoryRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$AddCategoryRequestImplFromJson(json);
@@ -177,12 +155,10 @@ class _$AddCategoryRequestImpl implements _AddCategoryRequest {
   final int status;
   @override
   final int? percent;
-  @override
-  final String? imageFile;
 
   @override
   String toString() {
-    return 'AddCategoryRequest(name: $name, sortOrder: $sortOrder, status: $status, percent: $percent, imageFile: $imageFile)';
+    return 'AddCategoryRequest(name: $name, sortOrder: $sortOrder, status: $status, percent: $percent)';
   }
 
   @override
@@ -194,15 +170,13 @@ class _$AddCategoryRequestImpl implements _AddCategoryRequest {
             (identical(other.sortOrder, sortOrder) ||
                 other.sortOrder == sortOrder) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.percent, percent) || other.percent == percent) &&
-            (identical(other.imageFile, imageFile) ||
-                other.imageFile == imageFile));
+            (identical(other.percent, percent) || other.percent == percent));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, name, sortOrder, status, percent, imageFile);
+      Object.hash(runtimeType, name, sortOrder, status, percent);
 
   /// Create a copy of AddCategoryRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -226,8 +200,7 @@ abstract class _AddCategoryRequest implements AddCategoryRequest {
       {required final String name,
       required final int? sortOrder,
       required final int status,
-      required final int? percent,
-      required final String? imageFile}) = _$AddCategoryRequestImpl;
+      required final int? percent}) = _$AddCategoryRequestImpl;
 
   factory _AddCategoryRequest.fromJson(Map<String, dynamic> json) =
       _$AddCategoryRequestImpl.fromJson;
@@ -240,8 +213,6 @@ abstract class _AddCategoryRequest implements AddCategoryRequest {
   int get status;
   @override
   int? get percent;
-  @override
-  String? get imageFile;
 
   /// Create a copy of AddCategoryRequest
   /// with the given fields replaced by the non-null parameter values.

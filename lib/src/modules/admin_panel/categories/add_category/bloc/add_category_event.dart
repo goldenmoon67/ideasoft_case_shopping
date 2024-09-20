@@ -12,13 +12,11 @@ class AddCategoryActionEvent extends AddCategoryEvent {
   final int sortOrder;
   final int status;
   final int percent;
-  final String imageFile;
 
   AddCategoryActionEvent({
     required this.name,
     required this.sortOrder,
     required this.status,
     required this.percent,
-    required this.imageFile,
   });
 }

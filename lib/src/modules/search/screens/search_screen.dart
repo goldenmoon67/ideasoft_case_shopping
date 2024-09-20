@@ -3,13 +3,15 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/bloc/search_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/widgets/search_result_item.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
 class SearchScreen extends StatefulWidget implements AutoRouteWrapper {
-  const SearchScreen({super.key});
+  final ListScreenType listScreenType;
+  const SearchScreen({super.key, required this.listScreenType});
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -144,6 +146,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                     : "Tax Not Included";
 
                                 return SearchResultItem(
+                                  listScreenType: widget.listScreenType,
+                                  onDismissed: () {},
                                   onTap: () {
                                     AutoRouter.of(context).push(
                                       ProductDetailRoute(

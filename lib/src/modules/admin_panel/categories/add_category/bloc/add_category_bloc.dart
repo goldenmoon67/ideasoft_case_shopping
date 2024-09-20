@@ -25,7 +25,6 @@ class AddCategoryBloc extends Bloc<AddCategoryEvent, AddCategoryState> {
             sortOrder: event.sortOrder,
             status: event.status,
             percent: event.percent,
-            imageFile: event.imageFile,
           ),
         );
         emit(AddCategorySuccesData());

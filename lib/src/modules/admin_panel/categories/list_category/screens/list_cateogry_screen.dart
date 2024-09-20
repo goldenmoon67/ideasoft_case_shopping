@@ -9,7 +9,8 @@ import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart'
 
 @RoutePage()
 class ListCategoryScreen extends StatefulWidget implements AutoRouteWrapper {
-  const ListCategoryScreen({super.key});
+  final ListScreenType listScreenType;
+  const ListCategoryScreen({super.key, required this.listScreenType});
 
   @override
   State<ListCategoryScreen> createState() => _ListCategoryScreenState();
@@ -131,6 +132,7 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
                                       final category = categories[index];
 
                                       return ListCategoryResultItem(
+                                        listScreenType: widget.listScreenType,
                                         onDismissed: () {
                                           categories.removeWhere(
                                               (item) => item.id == category.id);

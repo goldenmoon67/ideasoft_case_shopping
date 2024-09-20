@@ -2,10 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/list_response/product_list_response.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/slider/item/slider_item.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/bloc/admin_panel_home_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ideasoft_case_project_shop/src/modules/home/widgets/appbar/home_appbar.dart';
+import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/widgets/admin_appbar.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -42,7 +43,7 @@ class _AdminPanelHomeScreenState extends State<AdminPanelHomeScreen> {
         },
         builder: (context, state) {
           return Scaffold(
-            appBar: homeScreennAppbar(context),
+            appBar: adminScreennAppbar(context),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -102,24 +103,35 @@ void _showOptionsDialog(BuildContext context, String type) {
               leading: const Icon(Icons.list, color: Colors.blue),
               title: const Text('Listele'),
               onTap: () {
-                AutoRouter.of(context).push(
-                    type == "Ürünler" ? const SearchRoute() : const ListCategoryRoute());
+                if (type == "Ürünler") {
+                  AutoRouter.of(context)
+                      .push(SearchRoute(listScreenType: ListScreenType.list));
+                } else {
+                  AutoRouter.of(context).push(
+                      ListCategoryRoute(listScreenType: ListScreenType.list));
+                }
               },
             ),
             ListTile(
               leading: const Icon(Icons.add, color: Colors.green),
               title: const Text('Ekle'),
               onTap: () {
-                AutoRouter.of(context).push(
-                    type == "Ürünler" ? const AddProductRoute() : const AddCategoryRoute());
+                AutoRouter.of(context).push(type == "Ürünler"
+                    ? const AddProductRoute()
+                    : const AddCategoryRoute());
               },
             ),
             ListTile(
               leading: const Icon(Icons.delete, color: Colors.red),
               title: const Text('Sil'),
               onTap: () {
-                AutoRouter.of(context).push(
-                    type == "Ürünler" ? const SearchRoute() : const ListCategoryRoute());
+                if (type == "Ürünler") {
+                  AutoRouter.of(context)
+                      .push(SearchRoute(listScreenType: ListScreenType.delete));
+                } else {
+                  AutoRouter.of(context).push(
+                      ListCategoryRoute(listScreenType: ListScreenType.delete));
+                }
               },
             ),
           ],

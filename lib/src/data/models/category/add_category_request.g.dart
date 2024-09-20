@@ -13,7 +13,6 @@ _$AddCategoryRequestImpl _$$AddCategoryRequestImplFromJson(
       sortOrder: (json['sortOrder'] as num?)?.toInt(),
       status: (json['status'] as num).toInt(),
       percent: (json['percent'] as num?)?.toInt(),
-      imageFile: json['imageFile'] as String?,
     );
 
 Map<String, dynamic> _$$AddCategoryRequestImplToJson(
@@ -23,5 +22,4 @@ Map<String, dynamic> _$$AddCategoryRequestImplToJson(
       'sortOrder': instance.sortOrder,
       'status': instance.status,
       'percent': instance.percent,
-      'imageFile': instance.imageFile,
     };

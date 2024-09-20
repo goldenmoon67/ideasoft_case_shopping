@@ -11,7 +11,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final productRepository = getIt<ProductRepository>();
   SearchBloc() : super(SearchLoading()) {
     on<StartSearchEvent>((event, emit) async {
-      emit(SearchInitial());
+      emit(SearchLoading());
+      var result = await productRepository.getProducts();
+      emit(SearchResultData(productListResponse: result));
     });
     on<ActionSearchEvent>((event, emit) async {
       emit(SearchLoading());

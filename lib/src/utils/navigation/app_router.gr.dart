@@ -40,9 +40,14 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ListCategoryRoute.name: (routeData) {
+      final args = routeData.argsAs<ListCategoryRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const ListCategoryScreen()),
+        child: WrappedRoute(
+            child: ListCategoryScreen(
+          key: args.key,
+          listScreenType: args.listScreenType,
+        )),
       );
     },
     ProductDetailRoute.name: (routeData) {
@@ -57,9 +62,14 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     SearchRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const SearchScreen()),
+        child: WrappedRoute(
+            child: SearchScreen(
+          key: args.key,
+          listScreenType: args.listScreenType,
+        )),
       );
     },
     UploadPhotoRoute.name: (routeData) {
@@ -134,16 +144,40 @@ class HomeRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [ListCategoryScreen]
-class ListCategoryRoute extends PageRouteInfo<void> {
-  const ListCategoryRoute({List<PageRouteInfo>? children})
-      : super(
+class ListCategoryRoute extends PageRouteInfo<ListCategoryRouteArgs> {
+  ListCategoryRoute({
+    Key? key,
+    required ListScreenType listScreenType,
+    List<PageRouteInfo>? children,
+  }) : super(
           ListCategoryRoute.name,
+          args: ListCategoryRouteArgs(
+            key: key,
+            listScreenType: listScreenType,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'ListCategoryRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<ListCategoryRouteArgs> page =
+      PageInfo<ListCategoryRouteArgs>(name);
+}
+
+class ListCategoryRouteArgs {
+  const ListCategoryRouteArgs({
+    this.key,
+    required this.listScreenType,
+  });
+
+  final Key? key;
+
+  final ListScreenType listScreenType;
+
+  @override
+  String toString() {
+    return 'ListCategoryRouteArgs{key: $key, listScreenType: $listScreenType}';
+  }
 }
 
 /// generated route for
@@ -186,16 +220,39 @@ class ProductDetailRouteArgs {
 
 /// generated route for
 /// [SearchScreen]
-class SearchRoute extends PageRouteInfo<void> {
-  const SearchRoute({List<PageRouteInfo>? children})
-      : super(
+class SearchRoute extends PageRouteInfo<SearchRouteArgs> {
+  SearchRoute({
+    Key? key,
+    required ListScreenType listScreenType,
+    List<PageRouteInfo>? children,
+  }) : super(
           SearchRoute.name,
+          args: SearchRouteArgs(
+            key: key,
+            listScreenType: listScreenType,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'SearchRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<SearchRouteArgs> page = PageInfo<SearchRouteArgs>(name);
+}
+
+class SearchRouteArgs {
+  const SearchRouteArgs({
+    this.key,
+    required this.listScreenType,
+  });
+
+  final Key? key;
+
+  final ListScreenType listScreenType;
+
+  @override
+  String toString() {
+    return 'SearchRouteArgs{key: $key, listScreenType: $listScreenType}';
+  }
 }
 
 /// generated route for
