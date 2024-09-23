@@ -30,6 +30,7 @@ Bu proje, Flutter'ın  3.24.2 sürümü kullanılarak geliştirilmiştir.
 
 ### Ben Kimim?
 - **Abdulmiraç Altınay**:
+- [miracaltinay.com](https://miracaltinay.com )
 - miracaltinay.com 
 - abdulmirac@gmail.com 
 - +90 5372372995
