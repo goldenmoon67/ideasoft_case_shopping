@@ -72,7 +72,7 @@ class AppDialog {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Tamam"),
+              child: const Text("Tamam"),
             ),
           ],
         );
