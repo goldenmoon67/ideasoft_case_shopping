@@ -62,11 +62,9 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
           EasyLoading.dismiss(animation: false);
         }
         if (state is ListCategoryResultData) {
-          debugPrint("sadkşlsakdlşsakdaşlslşdsalşakds 454545454545445");
           setState(() {
             _isLoading = false;
             categories.addAll(state.categories);
-            debugPrint(categories.toString());
           });
         }
         if (state is ErrorListCategory) {

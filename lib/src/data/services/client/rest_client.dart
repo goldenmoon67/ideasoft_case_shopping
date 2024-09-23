@@ -26,7 +26,7 @@ abstract class RestClient {
   Future<ProductListResponse> getProductDetail(@Path() int id);
 
   @DELETE("products/{id}")
-  Future<ProductListResponse> deleteProduct(@Path() int id);
+  Future<void> deleteProduct(@Path() int id);
 
   @POST("categories")
   Future<void> createCategory(@Body() AddCategoryRequest request);

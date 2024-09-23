@@ -35,4 +35,9 @@ class ProductRepositoryImpl extends ProductRepository {
   Future<void> uploadImage(CreateImageModel request) async {
     await client.uploadPhoto(request);
   }
+
+  @override
+  Future<void> deleteProduct(int id) async {
+    await client.deleteProduct(id);
+  }
 }

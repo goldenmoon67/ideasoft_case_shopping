@@ -18,3 +18,5 @@ final class ErrorSearchData extends SearchState {
 
   ErrorSearchData({required this.error});
 }
+
+final class SearchSucces extends SearchState {}

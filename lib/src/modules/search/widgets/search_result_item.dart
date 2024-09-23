@@ -98,87 +98,91 @@ class _SearchResultItemState extends State<SearchResultItem>
               ),
             ),
           ),
-        SlideTransition(
-          position: _offsetAnimation,
-          child: Dismissible(
-            key: UniqueKey(),
-            direction: DismissDirection.endToStart,
-            onDismissed: (direction) {
-              widget.onDismissed();
-            },
-            background: Container(
-              color: Colors.red,
-              alignment: Alignment.centerRight,
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: const Icon(
-                Icons.delete,
-                color: Colors.white,
-              ),
-            ),
-            child: InkWell(
-              onTap: widget.onTap,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                elevation: 2,
-                margin: const EdgeInsets.symmetric(vertical: 8),
-                child: ListTile(
-                  leading: Image.network(
-                    widget.productImage,
-                    width: 50,
-                    height: 50,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return const Icon(
-                        Icons.image_not_supported,
-                        color: Colors.grey,
-                        size: 50,
-                      );
-                    },
-                  ),
-                  title: Text(
-                    widget.fullName,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+        widget.listScreenType == ListScreenType.delete
+            ? SlideTransition(
+                position: _offsetAnimation,
+                child: Dismissible(
+                  key: UniqueKey(),
+                  direction: DismissDirection.endToStart,
+                  onDismissed: (direction) {
+                    widget.onDismissed();
+                  },
+                  background: Container(
+                    color: Colors.red,
+                    alignment: Alignment.centerRight,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: const Icon(
+                      Icons.delete,
+                      color: Colors.white,
                     ),
                   ),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Fiyat: ${widget.price} ${widget.currency}',
-                        style: const TextStyle(color: Colors.black54),
-                      ),
-                      if (widget.discount != null)
-                        Text(
-                          widget.discount ?? "",
-                          style: const TextStyle(color: Colors.red),
-                        ),
-                      Text(
-                        widget.stockState == "In Stock"
-                            ? "Mevcut"
-                            : "Stok Bulunmuyor",
-                        style: TextStyle(
-                          color: widget.stockState == "In Stock"
-                              ? Colors.green
-                              : Colors.red,
-                        ),
-                      ),
-                      Text(
-                        widget.isTaxIncluded,
-                        style: const TextStyle(color: Colors.blueGrey),
-                      ),
-                    ],
-                  ),
+                  child: card(),
                 ),
-              ),
+              )
+            : card(),
+      ],
+    );
+  }
+
+  InkWell card() {
+    return InkWell(
+      onTap: widget.onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        elevation: 2,
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        child: ListTile(
+          leading: Image.network(
+            widget.productImage,
+            width: 50,
+            height: 50,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              return const Icon(
+                Icons.image_not_supported,
+                color: Colors.grey,
+                size: 50,
+              );
+            },
+          ),
+          title: Text(
+            widget.fullName,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
             ),
           ),
+          subtitle: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Fiyat: ${widget.price} ${widget.currency}',
+                style: const TextStyle(color: Colors.black54),
+              ),
+              if (widget.discount != null)
+                Text(
+                  widget.discount ?? "",
+                  style: const TextStyle(color: Colors.red),
+                ),
+              Text(
+                widget.stockState == "In Stock" ? "Mevcut" : "Stok Bulunmuyor",
+                style: TextStyle(
+                  color: widget.stockState == "In Stock"
+                      ? Colors.green
+                      : Colors.red,
+                ),
+              ),
+              Text(
+                widget.isTaxIncluded,
+                style: const TextStyle(color: Colors.blueGrey),
+              ),
+            ],
+          ),
         ),
-      ],
+      ),
     );
   }
 }

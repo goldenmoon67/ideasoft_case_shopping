@@ -18,15 +18,6 @@ _$CategoryModelImpl _$$CategoryModelImplFromJson(Map<String, dynamic> json) =>
       percent: (json['percent'] as num?)?.toInt(),
       imageFile: json['imageFile'] as String?,
       displayShowcaseContent: (json['displayShowcaseContent'] as num?)?.toInt(),
-      showcaseContent: json['showcaseContent'] as bool?,
-      showcaseContentDisplayType:
-          (json['showcaseContentDisplayType'] as num?)?.toInt(),
-      displayShowcaseFooterContent:
-          (json['displayShowcaseFooterContent'] as num?)?.toInt(),
-      showcaseFooterContent: json['showcaseFooterContent'] as bool?,
-      showcaseFooterContentDisplayType:
-          (json['showcaseFooterContentDisplayType'] as num?)?.toInt(),
-      hasChildren: (json['hasChildren'] as num?)?.toInt(),
       pageTitle: json['pageTitle'] as String?,
       metaDescription: json['metaDescription'] as String?,
       metaKeywords: json['metaKeywords'] as String?,
@@ -50,13 +41,6 @@ Map<String, dynamic> _$$CategoryModelImplToJson(_$CategoryModelImpl instance) =>
       'percent': instance.percent,
       'imageFile': instance.imageFile,
       'displayShowcaseContent': instance.displayShowcaseContent,
-      'showcaseContent': instance.showcaseContent,
-      'showcaseContentDisplayType': instance.showcaseContentDisplayType,
-      'displayShowcaseFooterContent': instance.displayShowcaseFooterContent,
-      'showcaseFooterContent': instance.showcaseFooterContent,
-      'showcaseFooterContentDisplayType':
-          instance.showcaseFooterContentDisplayType,
-      'hasChildren': instance.hasChildren,
       'pageTitle': instance.pageTitle,
       'metaDescription': instance.metaDescription,
       'metaKeywords': instance.metaKeywords,

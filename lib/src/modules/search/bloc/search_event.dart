@@ -11,3 +11,8 @@ class ActionSearchEvent extends SearchEvent {
   final String query;
   ActionSearchEvent(this.query);
 }
+
+class DeleteProductEvent extends SearchEvent {
+  final int id;
+  DeleteProductEvent(this.id);
+}

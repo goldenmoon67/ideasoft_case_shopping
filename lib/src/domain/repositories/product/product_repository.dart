@@ -9,4 +9,5 @@ abstract class ProductRepository {
   Future<ProductListResponse> getProductDetail(int id);
   Future<ReturnIdModel> createProduct(AddProductRequest request);
   Future<void> uploadImage(CreateImageModel request);
+  Future<void> deleteProduct(int id);
 }

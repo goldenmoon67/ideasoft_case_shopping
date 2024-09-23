@@ -28,5 +28,13 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
         emit(ErrorSearchData(error: e.toString()));
       }
     });
+    on<DeleteProductEvent>((event, emit) async {
+      try {
+        await productRepository.deleteProduct(event.id);
+        emit(SearchSucces());
+      } catch (e) {
+        emit(ErrorSearchData(error: e.toString()));
+      }
+    });
   }
 }

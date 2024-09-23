@@ -30,13 +30,6 @@ mixin _$CategoryModel {
   int? get percent => throw _privateConstructorUsedError;
   String? get imageFile => throw _privateConstructorUsedError;
   int? get displayShowcaseContent => throw _privateConstructorUsedError;
-  bool? get showcaseContent => throw _privateConstructorUsedError;
-  int? get showcaseContentDisplayType => throw _privateConstructorUsedError;
-  int? get displayShowcaseFooterContent => throw _privateConstructorUsedError;
-  bool? get showcaseFooterContent => throw _privateConstructorUsedError;
-  int? get showcaseFooterContentDisplayType =>
-      throw _privateConstructorUsedError;
-  int? get hasChildren => throw _privateConstructorUsedError;
   String? get pageTitle => throw _privateConstructorUsedError;
   String? get metaDescription => throw _privateConstructorUsedError;
   String? get metaKeywords => throw _privateConstructorUsedError;
@@ -74,12 +67,6 @@ abstract class $CategoryModelCopyWith<$Res> {
       int? percent,
       String? imageFile,
       int? displayShowcaseContent,
-      bool? showcaseContent,
-      int? showcaseContentDisplayType,
-      int? displayShowcaseFooterContent,
-      bool? showcaseFooterContent,
-      int? showcaseFooterContentDisplayType,
-      int? hasChildren,
       String? pageTitle,
       String? metaDescription,
       String? metaKeywords,
@@ -116,12 +103,6 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
     Object? percent = freezed,
     Object? imageFile = freezed,
     Object? displayShowcaseContent = freezed,
-    Object? showcaseContent = freezed,
-    Object? showcaseContentDisplayType = freezed,
-    Object? displayShowcaseFooterContent = freezed,
-    Object? showcaseFooterContent = freezed,
-    Object? showcaseFooterContentDisplayType = freezed,
-    Object? hasChildren = freezed,
     Object? pageTitle = freezed,
     Object? metaDescription = freezed,
     Object? metaKeywords = freezed,
@@ -172,31 +153,6 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
       displayShowcaseContent: freezed == displayShowcaseContent
           ? _value.displayShowcaseContent
           : displayShowcaseContent // ignore: cast_nullable_to_non_nullable
-              as int?,
-      showcaseContent: freezed == showcaseContent
-          ? _value.showcaseContent
-          : showcaseContent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      showcaseContentDisplayType: freezed == showcaseContentDisplayType
-          ? _value.showcaseContentDisplayType
-          : showcaseContentDisplayType // ignore: cast_nullable_to_non_nullable
-              as int?,
-      displayShowcaseFooterContent: freezed == displayShowcaseFooterContent
-          ? _value.displayShowcaseFooterContent
-          : displayShowcaseFooterContent // ignore: cast_nullable_to_non_nullable
-              as int?,
-      showcaseFooterContent: freezed == showcaseFooterContent
-          ? _value.showcaseFooterContent
-          : showcaseFooterContent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      showcaseFooterContentDisplayType: freezed ==
-              showcaseFooterContentDisplayType
-          ? _value.showcaseFooterContentDisplayType
-          : showcaseFooterContentDisplayType // ignore: cast_nullable_to_non_nullable
-              as int?,
-      hasChildren: freezed == hasChildren
-          ? _value.hasChildren
-          : hasChildren // ignore: cast_nullable_to_non_nullable
               as int?,
       pageTitle: freezed == pageTitle
           ? _value.pageTitle
@@ -257,12 +213,6 @@ abstract class _$$CategoryModelImplCopyWith<$Res>
       int? percent,
       String? imageFile,
       int? displayShowcaseContent,
-      bool? showcaseContent,
-      int? showcaseContentDisplayType,
-      int? displayShowcaseFooterContent,
-      bool? showcaseFooterContent,
-      int? showcaseFooterContentDisplayType,
-      int? hasChildren,
       String? pageTitle,
       String? metaDescription,
       String? metaKeywords,
@@ -297,12 +247,6 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
     Object? percent = freezed,
     Object? imageFile = freezed,
     Object? displayShowcaseContent = freezed,
-    Object? showcaseContent = freezed,
-    Object? showcaseContentDisplayType = freezed,
-    Object? displayShowcaseFooterContent = freezed,
-    Object? showcaseFooterContent = freezed,
-    Object? showcaseFooterContentDisplayType = freezed,
-    Object? hasChildren = freezed,
     Object? pageTitle = freezed,
     Object? metaDescription = freezed,
     Object? metaKeywords = freezed,
@@ -353,31 +297,6 @@ class __$$CategoryModelImplCopyWithImpl<$Res>
       displayShowcaseContent: freezed == displayShowcaseContent
           ? _value.displayShowcaseContent
           : displayShowcaseContent // ignore: cast_nullable_to_non_nullable
-              as int?,
-      showcaseContent: freezed == showcaseContent
-          ? _value.showcaseContent
-          : showcaseContent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      showcaseContentDisplayType: freezed == showcaseContentDisplayType
-          ? _value.showcaseContentDisplayType
-          : showcaseContentDisplayType // ignore: cast_nullable_to_non_nullable
-              as int?,
-      displayShowcaseFooterContent: freezed == displayShowcaseFooterContent
-          ? _value.displayShowcaseFooterContent
-          : displayShowcaseFooterContent // ignore: cast_nullable_to_non_nullable
-              as int?,
-      showcaseFooterContent: freezed == showcaseFooterContent
-          ? _value.showcaseFooterContent
-          : showcaseFooterContent // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      showcaseFooterContentDisplayType: freezed ==
-              showcaseFooterContentDisplayType
-          ? _value.showcaseFooterContentDisplayType
-          : showcaseFooterContentDisplayType // ignore: cast_nullable_to_non_nullable
-              as int?,
-      hasChildren: freezed == hasChildren
-          ? _value.hasChildren
-          : hasChildren // ignore: cast_nullable_to_non_nullable
               as int?,
       pageTitle: freezed == pageTitle
           ? _value.pageTitle
@@ -433,12 +352,6 @@ class _$CategoryModelImpl implements _CategoryModel {
       required this.percent,
       required this.imageFile,
       required this.displayShowcaseContent,
-      required this.showcaseContent,
-      required this.showcaseContentDisplayType,
-      required this.displayShowcaseFooterContent,
-      required this.showcaseFooterContent,
-      required this.showcaseFooterContentDisplayType,
-      required this.hasChildren,
       required this.pageTitle,
       required this.metaDescription,
       required this.metaKeywords,
@@ -474,18 +387,6 @@ class _$CategoryModelImpl implements _CategoryModel {
   @override
   final int? displayShowcaseContent;
   @override
-  final bool? showcaseContent;
-  @override
-  final int? showcaseContentDisplayType;
-  @override
-  final int? displayShowcaseFooterContent;
-  @override
-  final bool? showcaseFooterContent;
-  @override
-  final int? showcaseFooterContentDisplayType;
-  @override
-  final int? hasChildren;
-  @override
   final String? pageTitle;
   @override
   final String? metaDescription;
@@ -514,7 +415,7 @@ class _$CategoryModelImpl implements _CategoryModel {
 
   @override
   String toString() {
-    return 'CategoryModel(id: $id, name: $name, slug: $slug, sortOrder: $sortOrder, status: $status, distributor: $distributor, distributorCode: $distributorCode, percent: $percent, imageFile: $imageFile, displayShowcaseContent: $displayShowcaseContent, showcaseContent: $showcaseContent, showcaseContentDisplayType: $showcaseContentDisplayType, displayShowcaseFooterContent: $displayShowcaseFooterContent, showcaseFooterContent: $showcaseFooterContent, showcaseFooterContentDisplayType: $showcaseFooterContentDisplayType, hasChildren: $hasChildren, pageTitle: $pageTitle, metaDescription: $metaDescription, metaKeywords: $metaKeywords, canonicalUrl: $canonicalUrl, parent: $parent, children: $children, imageUrl: $imageUrl, isCombine: $isCombine, isSearchable: $isSearchable)';
+    return 'CategoryModel(id: $id, name: $name, slug: $slug, sortOrder: $sortOrder, status: $status, distributor: $distributor, distributorCode: $distributorCode, percent: $percent, imageFile: $imageFile, displayShowcaseContent: $displayShowcaseContent, pageTitle: $pageTitle, metaDescription: $metaDescription, metaKeywords: $metaKeywords, canonicalUrl: $canonicalUrl, parent: $parent, children: $children, imageUrl: $imageUrl, isCombine: $isCombine, isSearchable: $isSearchable)';
   }
 
   @override
@@ -537,24 +438,6 @@ class _$CategoryModelImpl implements _CategoryModel {
                 other.imageFile == imageFile) &&
             (identical(other.displayShowcaseContent, displayShowcaseContent) ||
                 other.displayShowcaseContent == displayShowcaseContent) &&
-            (identical(other.showcaseContent, showcaseContent) ||
-                other.showcaseContent == showcaseContent) &&
-            (identical(other.showcaseContentDisplayType,
-                    showcaseContentDisplayType) ||
-                other.showcaseContentDisplayType ==
-                    showcaseContentDisplayType) &&
-            (identical(other.displayShowcaseFooterContent,
-                    displayShowcaseFooterContent) ||
-                other.displayShowcaseFooterContent ==
-                    displayShowcaseFooterContent) &&
-            (identical(other.showcaseFooterContent, showcaseFooterContent) ||
-                other.showcaseFooterContent == showcaseFooterContent) &&
-            (identical(other.showcaseFooterContentDisplayType,
-                    showcaseFooterContentDisplayType) ||
-                other.showcaseFooterContentDisplayType ==
-                    showcaseFooterContentDisplayType) &&
-            (identical(other.hasChildren, hasChildren) ||
-                other.hasChildren == hasChildren) &&
             (identical(other.pageTitle, pageTitle) ||
                 other.pageTitle == pageTitle) &&
             (identical(other.metaDescription, metaDescription) ||
@@ -587,12 +470,6 @@ class _$CategoryModelImpl implements _CategoryModel {
         percent,
         imageFile,
         displayShowcaseContent,
-        showcaseContent,
-        showcaseContentDisplayType,
-        displayShowcaseFooterContent,
-        showcaseFooterContent,
-        showcaseFooterContentDisplayType,
-        hasChildren,
         pageTitle,
         metaDescription,
         metaKeywords,
@@ -632,12 +509,6 @@ abstract class _CategoryModel implements CategoryModel {
       required final int? percent,
       required final String? imageFile,
       required final int? displayShowcaseContent,
-      required final bool? showcaseContent,
-      required final int? showcaseContentDisplayType,
-      required final int? displayShowcaseFooterContent,
-      required final bool? showcaseFooterContent,
-      required final int? showcaseFooterContentDisplayType,
-      required final int? hasChildren,
       required final String? pageTitle,
       required final String? metaDescription,
       required final String? metaKeywords,
@@ -671,18 +542,6 @@ abstract class _CategoryModel implements CategoryModel {
   String? get imageFile;
   @override
   int? get displayShowcaseContent;
-  @override
-  bool? get showcaseContent;
-  @override
-  int? get showcaseContentDisplayType;
-  @override
-  int? get displayShowcaseFooterContent;
-  @override
-  bool? get showcaseFooterContent;
-  @override
-  int? get showcaseFooterContentDisplayType;
-  @override
-  int? get hasChildren;
   @override
   String? get pageTitle;
   @override

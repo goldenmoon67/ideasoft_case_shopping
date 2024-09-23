@@ -154,7 +154,12 @@ class _SearchScreenState extends State<SearchScreen> {
 
                                 return SearchResultItem(
                                   listScreenType: widget.listScreenType,
-                                  onDismissed: () {},
+                                  onDismissed: () {
+                                    products.removeWhere(
+                                        (item) => item.id == product.id);
+                                    BlocProvider.of<SearchBloc>(context)
+                                        .add(DeleteProductEvent(product.id));
+                                  },
                                   onTap: () {
                                     AutoRouter.of(context).push(
                                       ProductDetailRoute(
