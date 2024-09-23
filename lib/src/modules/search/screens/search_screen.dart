@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/bloc/search_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/search/widgets/search_result_item.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -62,6 +63,12 @@ class _SearchScreenState extends State<SearchScreen> {
         } else {
           EasyLoading.dismiss(animation: false);
         }
+        if (state is ErrorSearchData) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
+        }
         if (state is SearchResultData) {
           setState(() {
             _isLoading = false;
@@ -97,7 +104,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   decoration: InputDecoration(
                     prefixIcon:
                         const Icon(Icons.search, color: Colors.deepPurple),
-                    labelText: 'Ürün Arama',
+                    labelText: 'Arama',
                     labelStyle: const TextStyle(color: Colors.deepPurple),
                     filled: true,
                     fillColor: Colors.grey[200],

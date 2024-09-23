@@ -7,6 +7,7 @@ import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/bloc/adm
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/home/widgets/admin_appbar.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -33,7 +34,12 @@ class _AdminPanelHomeScreenState extends State<AdminPanelHomeScreen> {
           } else {
             EasyLoading.dismiss(animation: false);
           }
-
+          if (state is AdminPanelErrorState) {
+            AppDialog.e(
+              context,
+              error: state.error,
+            );
+          }
           if (state is AdminPanelHomeSliderData) {
             sliders.addAll(state.sliderItems);
           }

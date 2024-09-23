@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/data/models/product/currency/currency.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/add_product/bloc/add_product_bloc.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -50,7 +51,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
         } else {
           EasyLoading.dismiss(animation: false);
         }
-
+        if (state is ErrorAddProduct) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
+        }
         if (state is AddProductSuccesData) {
           AutoRouter.of(context).setRoot(const AdminPanelHomeRoute());
           AutoRouter.of(context).push(UploadPhotoRoute(productId: state.id));

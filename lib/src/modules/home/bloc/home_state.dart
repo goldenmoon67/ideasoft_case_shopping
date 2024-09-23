@@ -18,3 +18,9 @@ final class HomeProductData extends HomeState {
 
   HomeProductData({required this.productListResponse});
 }
+
+final class ErrorHomeData extends HomeState {
+  final String error;
+
+  ErrorHomeData({required this.error});
+}

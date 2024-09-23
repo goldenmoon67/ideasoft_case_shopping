@@ -12,3 +12,9 @@ final class ProductDetailData extends ProductDetailState {
 
   ProductDetailData(this.productDetail);
 }
+
+final class ErrorProductDetailData extends ProductDetailState {
+  final String error;
+
+  ErrorProductDetailData(this.error);
+}

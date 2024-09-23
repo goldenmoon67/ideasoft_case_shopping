@@ -11,3 +11,9 @@ final class AddProductSuccesData extends AddProductState {
   final int id;
   AddProductSuccesData(this.id);
 }
+
+final class ErrorAddProduct extends AddProductState {
+  final String error;
+
+  ErrorAddProduct({required this.error});
+}

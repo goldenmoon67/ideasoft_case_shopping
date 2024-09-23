@@ -18,16 +18,20 @@ class AddCategoryBloc extends Bloc<AddCategoryEvent, AddCategoryState> {
     });
     on<AddCategoryActionEvent>(
       (event, emit) async {
-        emit(AddCategoryLoading());
-        await categoryRepository.createCategory(
-          AddCategoryRequest(
-            name: event.name,
-            sortOrder: event.sortOrder,
-            status: event.status,
-            percent: event.percent,
-          ),
-        );
-        emit(AddCategorySuccesData());
+        try {
+          emit(AddCategoryLoading());
+          await categoryRepository.createCategory(
+            AddCategoryRequest(
+              name: event.name,
+              sortOrder: event.sortOrder,
+              status: event.status,
+              percent: event.percent,
+            ),
+          );
+          emit(AddCategorySuccesData());
+        } catch (e) {
+          emit(ErrorAddCategoryData(e.toString()));
+        }
       },
     );
   }

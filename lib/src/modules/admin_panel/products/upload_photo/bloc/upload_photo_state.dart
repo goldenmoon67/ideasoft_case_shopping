@@ -10,3 +10,9 @@ final class UploadPhotoLoading extends UploadPhotoState {}
 final class UploadPhotoSuccesData extends UploadPhotoState {
   UploadPhotoSuccesData();
 }
+
+final class ErrorUploadPhoto extends UploadPhotoState {
+  final String error;
+
+  ErrorUploadPhoto({required this.error});
+}

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/upload_photo/bloc/upload_photo_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/products/upload_photo/widgets/upload_image_component.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -44,7 +45,12 @@ class _UploadPhotoScreenState extends State<UploadPhotoScreen> {
         } else {
           EasyLoading.dismiss(animation: false);
         }
-
+        if (state is ErrorUploadPhoto) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
+        }
         if (state is UploadPhotoSuccesData) {
           AutoRouter.of(context).setRoot(const AdminPanelHomeRoute());
           ScaffoldMessenger.of(context).showSnackBar(

@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/add_category/bloc/add_category_bloc.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -58,7 +59,12 @@ class _AddCategoryScreenState extends State<AddCategoryScreen> {
         } else {
           EasyLoading.dismiss(animation: false);
         }
-
+        if (state is ErrorAddCategoryData) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
+        }
         if (state is AddCategorySuccesData) {
           AutoRouter.of(context).setRoot(const AdminPanelHomeRoute());
           ScaffoldMessenger.of(context).showSnackBar(

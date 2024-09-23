@@ -11,17 +11,29 @@ class ListCategoryBloc extends Bloc<ListCategoryEvent, ListCategoryState> {
   final categoryRepository = getIt<CategoryRepository>();
   ListCategoryBloc() : super(ListCategoryLoading()) {
     on<StartListCategoryEvent>((event, emit) async {
-      emit(ListCategoryLoading());
-      var result = await categoryRepository.getCategories();
-      emit(ListCategoryResultData(categories: result));
+      try {
+        emit(ListCategoryLoading());
+        var result = await categoryRepository.getCategories();
+        emit(ListCategoryResultData(categories: result));
+      } catch (e) {
+        ErrorListCategory(error: e.toString());
+      }
     });
     on<DeleteListCategoryEvent>((event, emit) async {
-      await categoryRepository.deleteCategory(event.id);
-      emit(ListCategorySucces());
+      try {
+        await categoryRepository.deleteCategory(event.id);
+        emit(ListCategorySucces());
+      } catch (e) {
+        ErrorListCategory(error: e.toString());
+      }
     });
     on<ListCategorySearchEvent>((event, emit) async {
-      var result = await categoryRepository.searchCategories(event.query);
-      emit(ListCategoryResultData(categories: result));
+      try {
+        var result = await categoryRepository.searchCategories(event.query);
+        emit(ListCategoryResultData(categories: result));
+      } catch (e) {
+        ErrorListCategory(error: e.toString());
+      }
     });
   }
 }

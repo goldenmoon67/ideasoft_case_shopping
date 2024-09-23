@@ -14,3 +14,9 @@ final class ListCategoryResultData extends ListCategoryState {
 }
 
 final class ListCategorySucces extends ListCategoryState {}
+
+final class ErrorListCategorySucces extends ListCategoryState {
+  final String error;
+
+  ErrorListCategorySucces({required this.error});
+}

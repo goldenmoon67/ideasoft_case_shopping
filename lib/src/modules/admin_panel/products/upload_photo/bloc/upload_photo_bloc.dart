@@ -17,17 +17,21 @@ class UploadPhotoBloc extends Bloc<UploadPhotoEvent, UploadPhotoState> {
     });
     on<UploadPhotoActionEvent>(
       (event, emit) async {
-        emit(UploadPhotoLoading());
-        productRepository.uploadImage(
-          CreateImageModel(
-            filename: event.filename,
-            extension: "jpg",
-            attachment: event.attachment,
-            sortOrder: 1,
-            product: ProductCreateIdModel(id: event.product),
-          ),
-        );
-        emit(UploadPhotoSuccesData());
+        try {
+          emit(UploadPhotoLoading());
+          productRepository.uploadImage(
+            CreateImageModel(
+              filename: event.filename,
+              extension: "jpg",
+              attachment: event.attachment,
+              sortOrder: 1,
+              product: ProductCreateIdModel(id: event.product),
+            ),
+          );
+          emit(UploadPhotoSuccesData());
+        } catch (e) {
+          emit(ErrorUploadPhoto(error: e.toString()));
+        }
       },
     );
   }

@@ -18,3 +18,8 @@ final class AdminPanelHomeProductData extends AdminPanelHomeState {
 
   AdminPanelHomeProductData({required this.productListResponse});
 }
+final class  AdminPanelErrorState extends AdminPanelHomeState {
+  final String error;
+
+  AdminPanelErrorState({required this.error});
+}

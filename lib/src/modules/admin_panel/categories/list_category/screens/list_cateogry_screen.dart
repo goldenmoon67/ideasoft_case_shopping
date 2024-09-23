@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/bloc/list_category_bloc.dart';
 import 'package:ideasoft_case_project_shop/src/modules/admin_panel/categories/list_category/widgets/category_item.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 import 'package:ideasoft_case_project_shop/src/utils/navigation/app_router.dart';
 
 @RoutePage()
@@ -67,6 +68,12 @@ class _ListCategoryScreenState extends State<ListCategoryScreen> {
             categories.addAll(state.categories);
             debugPrint(categories.toString());
           });
+        }
+        if (state is ErrorListCategory) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
         }
       },
       builder: (context, state) {

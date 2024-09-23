@@ -8,6 +8,7 @@ import 'package:ideasoft_case_project_shop/src/modules/product/detail/widgets/ad
 import 'package:ideasoft_case_project_shop/src/modules/product/detail/widgets/product_appbar.dart';
 import 'package:ideasoft_case_project_shop/src/modules/product/detail/widgets/product_image_widget.dart';
 import 'package:ideasoft_case_project_shop/src/modules/product/detail/widgets/reviews_widget.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 
 @RoutePage()
 class ProductDetailScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -43,6 +44,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           EasyLoading.show();
         } else {
           EasyLoading.dismiss(animation: false);
+        }
+        if (state is ErrorProductDetailData) {
+          AppDialog.e(
+            context,
+            error: state.error,
+          );
         }
         if (state is ProductDetailData) {
           productDetail = state.productDetail;

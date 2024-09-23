@@ -11,9 +11,13 @@ class ProductDetailBloc extends Bloc<ProductDetailEvent, ProductDetailState> {
   final productRepository = getIt<ProductRepository>();
   ProductDetailBloc() : super(ProductDetailLoading()) {
     on<StartProductDetailEvent>((event, emit) async {
-      emit(ProductDetailInitial());
-      var result = await productRepository.getProductDetail(event.productId);
-      emit(ProductDetailData(result));
+      try {
+        emit(ProductDetailInitial());
+        var result = await productRepository.getProductDetail(event.productId);
+        emit(ProductDetailData(result));
+      } catch (e) {
+        emit(ErrorProductDetailData(e.toString()));
+      }
     });
   }
 }

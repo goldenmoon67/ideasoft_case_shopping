@@ -15,11 +15,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   HomeBloc() : super(HomeInitial()) {
     on<StartHomeEvent>((event, emit) async {
-      emit(HomeLoading());
-      var slider = await sliderRepository.getSliders();
-      emit(HomeSliderData(sliderItems: slider.items));
-      var product = await productRepository.getProducts();
-      emit(HomeProductData(productListResponse: product));
+      try {
+        emit(HomeLoading());
+        var slider = await sliderRepository.getSliders();
+        emit(HomeSliderData(sliderItems: slider.items));
+        var product = await productRepository.getProducts();
+        emit(HomeProductData(productListResponse: product));
+      } catch (e) {
+        emit(ErrorHomeData(error: e.toString()));
+      }
     });
   }
 }

@@ -13,6 +13,7 @@ import 'package:ideasoft_case_project_shop/src/modules/home/widgets/lists/catego
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/lists/grid_product_lists.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/sliders/title_sliders/title_slider.dart';
 import 'package:ideasoft_case_project_shop/src/modules/home/widgets/titles/action_shop_title.dart';
+import 'package:ideasoft_case_project_shop/src/utils/dialog/app_dialog.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -37,7 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
           } else {
             EasyLoading.dismiss(animation: false);
           }
-
+          if (state is ErrorHomeData) {
+            AppDialog.e(
+              context,
+              error: state.error,
+            );
+          }
           if (state is HomeSliderData) {
             sliders.addAll(state.sliderItems);
           }

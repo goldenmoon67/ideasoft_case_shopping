@@ -12,3 +12,9 @@ final class SearchResultData extends SearchState {
 
   SearchResultData({required this.productListResponse});
 }
+
+final class ErrorSearchData extends SearchState {
+  final String error;
+
+  ErrorSearchData({required this.error});
+}

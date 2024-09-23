@@ -60,4 +60,23 @@ class AppDialog {
       },
     );
   }
+
+  static Future<void> e(BuildContext context, {required String error}) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Text(error),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("Tamam"),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

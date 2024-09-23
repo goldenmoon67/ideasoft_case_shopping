@@ -17,18 +17,22 @@ class AddProductBloc extends Bloc<AddProductEvent, AddProductState> {
     });
     on<AddProductActionEvent>(
       (event, emit) async {
-        emit(AddProductLoading());
-        var idModel = await productRepository.createProduct(
-          AddProductRequest(
-            name: event.name,
-            sku: event.sku,
-            stockAmount: event.stockAmount,
-            price1: event.price,
-            currency: event.selectedCurrency,
-            status: 1,
-          ),
-        );
-        emit(AddProductSuccesData(idModel.id));
+        try {
+          emit(AddProductLoading());
+          var idModel = await productRepository.createProduct(
+            AddProductRequest(
+              name: event.name,
+              sku: event.sku,
+              stockAmount: event.stockAmount,
+              price1: event.price,
+              currency: event.selectedCurrency,
+              status: 1,
+            ),
+          );
+          emit(AddProductSuccesData(idModel.id));
+        } catch (e) {
+          emit(ErrorAddProduct(error: e.toString()));
+        }
       },
     );
   }
