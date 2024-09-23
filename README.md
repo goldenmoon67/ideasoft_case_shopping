@@ -1,16 +1,37 @@
-# ideasoft_case_project_shop
+# Ideasof Case Flutter Uygulaması
 
-A new Flutter project.
+Bu proje, [Ideasoft](https://www.ideasoft.com.tr/) tarafından talep edilen bir değerlendirme görevi kapsamında geliştirilmiştir. Proje iki ana bölümden oluşmaktadır:
 
-## Getting Started
+1. **Storefront Uygulaması**: Kullanıcıların ürünleri görüntüleyip detaylarını inceleyebildiği ve arama yapabildiği bir e-ticaret uygulaması.
+2. **Yönetim Paneli Uygulaması**: Admin API üzerinden ürün ve kategori işlemlerini yönetebileceğiniz bir yönetici paneli.
 
-This project is a starting point for a Flutter application.
+## Proje Özellikleri
 
-A few resources to get you started if this is your first Flutter project:
+### Görev 1 - Storefront Uygulaması
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Ana Sayfa**: Ürünlerin listelendiği sayfa.
+- **Ürün Detay Sayfası**: Seçilen ürünün detay bilgilerinin gösterildiği sayfa.
+- **Arama Sayfası**: Ürünler arasında arama yapabileceğiniz sayfa.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Görev 2 - Yönetim Paneli Uygulaması
+
+- **Ürün Yönetimi**:
+  - Ürünleri listeleme
+  - Yeni ürün ekleme
+  - Mevcut ürünü silme
+- **Kategori Yönetimi**:
+  - Kategorileri listeleme
+  - Yeni kategori ekleme
+  - Kategori düzenleme
+  - Kategori silme
+
+### Flutter Sürümü
+Bu proje, Flutter'ın  3.24.2 sürümü kullanılarak geliştirilmiştir.
+
+
+### Ben Kimim?
+- **Abdulmiraç Altınay**:
+- miracaltinay.com 
+- abdulmirac@gmail.com 
+- +90 5372372995
+
