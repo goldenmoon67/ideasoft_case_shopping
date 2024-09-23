@@ -22,7 +22,6 @@ Bu proje, [Ideasoft](https://www.ideasoft.com.tr/) tarafından talep edilen bir 
 - **Kategori Yönetimi**:
   - Kategorileri listeleme
   - Yeni kategori ekleme
-  - Kategori düzenleme
   - Kategori silme
 
 ### Flutter Sürümü
